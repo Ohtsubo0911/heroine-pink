@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} {{actress}}｜魔法少女・セーラー・レンジャー・アメコミ・バトルスーツ・特撮ヒロイン作品紹介</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Movie",
+      "name": "{{ title }}",
+      "image": "https://heroine.pink/{{ keyvisual }}",
+      "dateCreated": "{{ release_date }}",
+      "director": {
+        "@type": "Person",
+        "name": "{{ director }}"
+      },
+      "actor": [
+        {% for actor in actress %}
+          {
+            "@type": "Person",
+            "name": "{{ actor }}"
+          }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ],
+      "productionCompany": {
+        "@type": "Organization",
+        "name": "GIGA"
+      },
+      "duration": "{{ schema_duration }}"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "{{ schema_rating }}",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HEROINE PINK"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HEROINE PINK"
+    },
+    "datePublished": "{{ release_date }}",
+    "reviewBody": "{{ schema_review_body }}"
+  }
+</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap" rel="stylesheet">
+  <!-- Dela Gothic One を見出しの文字のみに限定して読み込む -->
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap&text={{ title }}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,700&display=swap&subset=japanese" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/scenes.css" />
+  <link rel="stylesheet" href="/css/review.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <style>
+    :root {
+      --keycolor: {
+          {
+          keycolor
+        }
+      }
+
+      ;
+    }
+
+    #title,
+    #data,
+    #footer,
+    .page_top {
+      background-color: var(--keycolor);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div id="home">
+      <p>
+        <a href="/"><span class="title">HEROINE PINK</span><br>
+          <span class="tagline">対ヒロイン研究分析機関</span></a>
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div id="title" style="background-color: {{keycolor}};">
+      <h1>{{ title }}</h1>
+    </div>
+
+    <img id="keyvisual" src="/{{ keyvisual }}"
+      alt="{{ title }} {% for name in actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ release_date }}" />
+
+    <div id="agenda">
+      <ul class="clearfix">
+        <li><a href="#story"><img src="/images/icon_story.svg"><br />STORY</a></li>
+        <li><a href="#scenes"><img src="/images/icon_scenes.svg"><br />SCENES</a></li>
+        <li><a href="#data"><img src="/images/icon_data.svg"><br />DATA</a></li>
+        <li><a href="#review"><img src="/images/icon_review.svg"><br />REVIEW</a></li>
+      </ul>
+    </div>
+
+    <section id="story">
+      <div id="lead">
+        <h2><img src="/images/icon_story.svg"><br />STORY</h2>
+        {{ story_lead | safe }}
+      </div>
+    </section>
+
+    <section id="scenes">
+      <h2><img src="/images/icon_scenes.svg"><br />SCENES</h2>
+
+      <p id="play"><a href="#">連続再生</a></p>
+
+      {% for scene in scenes %}
+      {% set current_video_src = scene.video_src or default_video_src %}
+
+      <div class="scenes-detail">
+        <div class="top">
+          {% for bubble in scene.top %}
+          <p class="{{ bubble.type }} {{ bubble.align }} tail-{{ bubble.tail }}">{{ bubble.text | safe }}</p>
+          {% endfor %}
+        </div>
+        <div class="video-area">
+          {# ↓↓↓ data-start と data-end 属性を追加 ↓↓↓ #}
+          <video src="{{ current_video_src }}" playsinline muted {% if scene.start %}data-start="{{ scene.start }}" {%
+            endif %} {% if scene.end %}data-end="{{ scene.end }}" {% endif %}>
+          </video>
+        </div>
+        <div class="bottom">
+          {% for bubble in scene.bottom %}
+          <p class="{{ bubble.type }} {{ bubble.align }} tail-{{ bubble.tail }}">{{ bubble.text | safe }}</p>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+
+    <section id="data" class="clearfix" style="background-color: {{keycolor}};">
+      <div>
+
+        <h2><img src="/images/icon_data.svg"><br />DATA</h2>
+
+        <p>作品番号：{{ work_code }}</p>
+        <p>出演女優：
+          {% for name in actress %}
+          {% set slug = actress_slugs[loop.index0] %}
+          <a href="/actress/{{ slug }}/">{{ name }}</a>{% if not loop.last %} {% endif %}
+          {% endfor %}
+        </p>
+        <p>監督：<a href="/director/{{ director_slug }}/">{{ director }}</a></p>
+        <p>収録時間：{{ duration }}分</p>
+        <p>DVDリリース日：{{ release_date }}</p>
+
+      </div>
+
+    </section>
+
+    <section id="review" class="talkcss">
+
+      <h2><img src="/images/icon_review.svg"><br />REVIEW</h2>
+
+      {# レビュアーの紹介パート #}
+      {% for id, reviewer in review.reviewers %}
+      <i class="{{ id }} left icon named introduction"></i>
+      <p>{{ reviewer.description }}</p>
+      {% endfor %}
+
+      {# 各分析セクションをループ #}
+      {% for section in review.sections %}
+      <h3>{{ section.title }}</h3>
+
+      {# 各セクション内の対話をループ #}
+      {% for chat in section.dialogue %}
+      {# speaker ID（例: "judge"）を使って、レビュアーの位置（例: "left"）を取得 #}
+      {% set speaker_id = chat.speaker %}
+      {% set speaker_position = review.reviewers[speaker_id].position %}
+
+      <i class="{{ speaker_id }} {{ speaker_position }} icon named"></i>
+      <p>{{ chat.text | safe }}</p>
+      {% endfor %}
+      {% endfor %}
+
+    </section>
+
+  </main>
+
+  <footer id="footer" style="background-color: {{keycolor}};">
+    <ul>
+      <li><a href="/about.html#title">ABOUT US</a></li>
+      <li><a href="/privacy.html#title">PRIVACY POLICY</a></li>
+    </ul>
+    <p><a href="/index.html">&copy; HROINE PINK 2025</a></p>
+  </footer>
+
+  <script src="/js/scenes.js" defer></script>
+
+</body>
+
+</html>

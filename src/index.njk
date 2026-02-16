@@ -1,0 +1,36 @@
+﻿---
+layout: "base.njk"
+title: "HEROINE PINK 対ヒロイン研究分析機関｜魔法少女・セーラー・レンジャー・アメコミ・バトルスーツ・特撮ヒロイン作品紹介"
+---
+
+<nav>
+    <ul>
+        <li><a href="#allheroines">ALL ヒロイン</a></li>
+        <li><a href="#mshojo">魔法少女系</a></li>
+        <li><a href="#sailor">セーラーヒロイン系</a></li>
+        <li><a href="#sentai">レンジャー系</a></li>
+        <li><a href="#acomic">アメコミ系</a></li>
+        <li><a href="#bsuit">バトルスーツ系</a></li>
+        <li><a href="#investigator">女捜査官系</a></li>
+        <li><a href="#nijigen">二次元系</a></li>
+    </ul>
+</nav>
+
+<h2>作品一覧</h2>
+
+<ul class="item">
+    {% for work in collections.works %}
+    <li>
+        <a href=" {{ work.url }}">
+            <div><img src="{{ work.data.keyvisual }}"
+                    alt="{{ work.data.title }} {% for name in work.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ work.data.release_date }}" />
+                <h3 class="line">{{ work.data.title }}<br />
+                    {{ work.data.work_code }}<br />
+                    {% for name in work.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}<br />
+                    {{ work.data.release_date }}
+                </h3>
+            </div>
+        </a>
+    </li>
+    {% endfor %}
+</ul>

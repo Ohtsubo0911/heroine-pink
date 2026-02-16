@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+#footer {
+  width: 100%;
+  display: block;
+  margin-top: 10vmin;
+}
+
+#footer ul {
+  display: blocks;
+  margin: 0;
+  padding: 0;
+  height: 2.4em;
+  background-color: rgb(255, 255, 255, 0.15);
+
+}
+
+#footer ul li {
+  float: left;
+  width: 50%;
+  font-family: "M PLUS 1p";
+  font-size: 12px;
+  text-align: center;
+  list-style: none;
+  line-height: 42px;
+}
+
+#footer p {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 5.2em;
+  line-height: 4.2em;
+  font-family: "M PLUS 1p";
+  font-size: 1.001em;
+  text-align: center;
+}
+
+#footer ul li a:link,
+#footer ul li a:visited,
+#footer p a:link,
+#footer p a:visited {
+  color: #FFF;
+}
+
+#footer ul li a:hover,
+#footer p a:hover {
+  text-decoration: none;
+}
