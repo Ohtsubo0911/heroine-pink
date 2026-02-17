@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const videoContainers = document.querySelectorAll('.scenes-detail');
+  const trigger = document.getElementById('play-sequential');
+
+  let sequentialMode = false;
+  let currentIndex = -1;
 
   function parseTime(value) {
     if (!value) return NaN;
@@ -12,8 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return parseFloat(value);
   }
 
+  // -----------------------------
+  // 🔁 通常ループモード
+  // -----------------------------
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+
+      if (sequentialMode) return;
+
       const video = entry.target.querySelector('video');
       if (!video) return;
 
@@ -40,24 +50,26 @@ document.addEventListener('DOMContentLoaded', () => {
         video.pause();
       }
 
-      // 🔥 end監視（毎回登録しないよう注意）
-      if (!video._endListenerAttached) {
-        video._endListenerAttached = true;
+      // 🔥 ループ処理（sequential中は無効）
+      if (!video._loopAttached) {
+
+        video._loopAttached = true;
 
         video.addEventListener('timeupdate', () => {
-            const effectiveEnd = isNaN(end) ? video.duration : end;
 
-            if (video.currentTime >= effectiveEnd) {
+          if (sequentialMode) return;
 
-                video.pause(); // いったん止める
+          const effectiveEnd = isNaN(end) ? video.duration : end;
 
-                video.currentTime = start;
+          if (video.currentTime >= effectiveEnd) {
 
-                video.addEventListener('seeked', () => {
-                video.play().catch(() => {});
-                }, { once: true });
+            video.pause();
+            video.currentTime = start;
 
-            }
+            video.addEventListener('seeked', () => {
+              video.play().catch(() => {});
+            }, { once: true });
+          }
         });
       }
 
@@ -67,7 +79,89 @@ document.addEventListener('DOMContentLoaded', () => {
   videoContainers.forEach(container => {
     const video = container.querySelector('video');
     if (!video) return;
+
+    video.muted = true;
     observer.observe(container);
   });
+
+  // -----------------------------
+  // ▶ 連続再生モード
+  // -----------------------------
+
+  function stopAllVideos() {
+    videoContainers.forEach(container => {
+      const v = container.querySelector('video');
+      if (!v) return;
+      v.pause();
+      v.muted = true;
+    });
+  }
+
+  function playSequential() {
+
+    currentIndex++;
+
+    if (currentIndex >= videoContainers.length) {
+      sequentialMode = false;
+      currentIndex = -1;
+
+      // 🔥 通常ループ再開
+      videoContainers.forEach(container => {
+        const video = container.querySelector('video');
+        if (!video) return;
+
+        const start = parseTime(video.dataset.start) || 0;
+        video.muted = true;
+        video.currentTime = start;
+
+        video.addEventListener('seeked', () => {
+          video.play().catch(() => {});
+        }, { once: true });
+      });
+      return;
+    }
+
+    const container = videoContainers[currentIndex];
+    const video = container.querySelector('video');
+
+    const start = parseTime(video.dataset.start) || 0;
+    const end = parseTime(video.dataset.end);
+    const effectiveEnd = isNaN(end) ? video.duration : end;
+
+    stopAllVideos();
+
+    window.smoothScroll(container, {
+      block: 'center'
+    });
+
+    video.muted = false;
+    video.currentTime = start;
+
+    video.addEventListener('seeked', () => {
+      video.play().catch(() => {});
+    }, { once: true });
+
+    const onTimeUpdate = () => {
+      if (video.currentTime >= effectiveEnd) {
+        video.removeEventListener('timeupdate', onTimeUpdate);
+        video.muted = true;
+        playSequential();
+      }
+    };
+
+    video.addEventListener('timeupdate', onTimeUpdate);
+  }
+
+  if (trigger) {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      sequentialMode = true;
+      currentIndex = -1;
+
+      stopAllVideos();
+      playSequential();
+    });
+  }
 
 });

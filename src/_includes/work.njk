@@ -145,7 +145,7 @@
     <section id="scenes">
       <h2><img src="/images/icon_scenes.svg"><br />SCENES</h2>
 
-      <p id="play"><a href="#">連続再生</a></p>
+      <p id="play"><a href="#" id="play-sequential">連続再生</a></p>
 
       {% for scene in scenes %}
       {% set current_video_src = scene.video_src or default_video_src %}
@@ -228,7 +228,8 @@
     <p><a href="/index.html">&copy; HROINE PINK 2025</a></p>
   </footer>
 
-  <script src="/js/scenes.js" defer></script>
+  <script src="/js/smooth-scroll.js"></script>
+  <script src="/js/scenes.js"></script>
 
 </body>
 
