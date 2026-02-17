@@ -72,6 +72,37 @@ h1 {
   line-height: 1.0em;
 }
 
+nav#breadcrumb {
+  max-width: 960px;
+  margin: auto;
+  padding:0.4em 12px;
+  font-family: "M PLUS 1p";
+}
+nav#breadcrumb ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+nav#breadcrumb ol li {
+  display: flex;
+  align-items: center;
+}
+nav#breadcrumb ol li:not(:last-child)::after  {
+  content: " > ";
+  margin: 0 0.5rem 0.2rem;
+  color: #888;
+}
+nav#breadcrumb ol li a {
+  text-decoration: none;
+  color: #000;
+}
+nav#breadcrumb ol li a img {
+  width: 1.1em;
+  margin-top: 0.35rem;
+}
+
 #keyvisual {
   display: block;
   margin: 0 auto;

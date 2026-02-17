@@ -1,0 +1,22 @@
+{
+  "magic-girl": {
+    "name": "魔法少女",
+    "description": "　"
+  },
+  "sailor-suits": {
+    "name": "セーラー",
+    "description": "　"
+  },
+  "ranger": {
+    "name": "レンジャー",
+    "description": "　"
+  },
+  "comics": {
+    "name": "アメコミ",
+    "description": "　"
+  },
+  "battle-suit": {
+    "name": "バトルスーツ",
+    "description": "　"
+  }
+}

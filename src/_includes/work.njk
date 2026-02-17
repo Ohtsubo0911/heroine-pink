@@ -98,6 +98,31 @@
       <h1>{{ title }}</h1>
     </div>
 
+    <nav id="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li>
+          <a href="/"><img src="/images/icon_home.svg" /></a>
+        </li>
+
+        {% if genres and genres.length > 0 %}
+          {% set firstGenre = genres[0] %}
+          {% set genreInfo = genresData[firstGenre] %}
+
+          {% if genreInfo %}
+            <li>
+              <a href="/genre/{{ firstGenre }}/">
+                {{ genreInfo.name }}
+              </a>
+            </li>
+          {% endif %}
+        {% endif %}
+
+        <li aria-current="page">
+          <span>{{ title }}</span>
+        </li>
+      </ol>
+    </nav>
+
     <img id="keyvisual" src="/{{ keyvisual }}"
       alt="{{ title }} {% for name in actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ release_date }}" />
 

@@ -3,6 +3,8 @@ layout: "work.njk"
 permalink: "/{{ work_code }}/"
 title: "触手十字架地獄13"
 work_code: "SPSE-69"
+genres:
+  - battle-suit
 keyvisual: "images/SPSE-69_Cosplayder_Heroine.jpg"
 keycolor: rgb(250, 20, 20)
 
