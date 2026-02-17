@@ -158,7 +158,7 @@
         </div>
         <div class="video-area">
           {# ↓↓↓ data-start と data-end 属性を追加 ↓↓↓ #}
-          <video src="{{ current_video_src }}" playsinline muted {% if scene.start %}data-start="{{ scene.start }}" {%
+          <video id="play-sequential" src="{{ current_video_src }}" playsinline muted {% if scene.start %}data-start="{{ scene.start }}" {%
             endif %} {% if scene.end %}data-end="{{ scene.end }}" {% endif %}>
           </video>
         </div>

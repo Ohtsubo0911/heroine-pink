@@ -45,32 +45,33 @@ default_video_src: "https://pub-1739badb7e414655a6ebb4fbc6fd24ed.r2.dev/SPSE-69.
 
 scenes:
   -
-    end: 10
+    start: "00:00:16"
+    end: "00:00:17"
     top:
       - { type: "S", align: "L", tail: "R", text: "ビデオの冒頭シーンです。" }
     bottom: []
 
   - 
-    start: "32:05"
-    end: "32:10"
+    start: "00:26"
+    end: "00:27"
     top:
       - { type: "S", align: "C", tail: "L", text: "10秒地点から始まるハイライトシーン！" }
     bottom: []
 
-  - start: "1:13:36"
-    end: "1:13:46"
+  - start: "46"
+    end: "47"
     top:
       - { type: "T", align: "C", tail: "C", text: "クライマックス！" }
     bottom: []
 
-  - start: "1:13:36"
-    end: "1:13:46"
+  - start: "49"
+    end: "50"
     top:
       - { type: "S", align: "C", tail: "C", text: "クライマックス！" }
     bottom: []
 
-  - start: "13:36"
-    end: "13:46"
+  - start: "0:00:58"
+    end: "0:00:59"
     top:
       - { type: "S", align: "C", tail: "C", text: "クライマックス！" }
     bottom: []
