@@ -15,7 +15,7 @@ body{
 .scenes-detail {
   display: flex;
   flex-direction: column;
-  margin: 12px; /* 上下左右に等間隔のマージン  */
+  margin: 1em; /* 上下左右に等間隔のマージン  */
   border: 2px solid #000;
   box-shadow: 0 2px 4px rgb(200, 200, 200);
   background-color: #000;

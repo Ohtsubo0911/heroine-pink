@@ -5,7 +5,8 @@ title: "触手十字架地獄13"
 work_code: "SPSE-69"
 genres:
   - battle-suit
-keyvisual: "images/SPSE-69_Cosplayder_Heroine.jpg"
+# keyvisual: "images/SPSE-69_Cosplayder_Heroine.jpg"
+keyvisual: "images/SPSE-69_Cosplayder_Heroine_.jpg"
 keycolor: rgb(250, 20, 20)
 
 # 基本情報
@@ -39,7 +40,8 @@ story_lead: |
   <p>果たして、コスプレイダーの運命は…。</p>
 
 # SCENESセクションのパネルデータ
-default_video_src: "/videos/SPSE-69_min.mp4"
+# default_video_src: "/videos/SPSE-69_min.mp4"
+default_video_src: "https://pub-1739badb7e414655a6ebb4fbc6fd24ed.r2.dev/SPSE-69.mp4"
 
 scenes:
   -
@@ -61,15 +63,13 @@ scenes:
       - { type: "T", align: "C", tail: "C", text: "クライマックス！" }
     bottom: []
 
-  - video_src: "/videos/SPSE-69.mp4"
-    start: "1:13:36"
+  - start: "1:13:36"
     end: "1:13:46"
     top:
-      - { type: "S", align: "C", tail: "C", text: "ああああああああ" }
+      - { type: "S", align: "C", tail: "C", text: "クライマックス！" }
     bottom: []
 
-  - video_src: "/videos/SPSE-69.mp4"
-    start: "13:36"
+  - start: "13:36"
     end: "13:46"
     top:
       - { type: "S", align: "C", tail: "C", text: "クライマックス！" }
