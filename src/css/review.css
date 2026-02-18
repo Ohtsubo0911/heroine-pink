@@ -178,7 +178,7 @@
 }
 
 .talkcss>.dr {
-  background-image: url(../images/1_dr_reviewer.png);
+  background-image: url(../images/reviewer_dr.png);
   border-color: #1e0a8c;
 }
 
@@ -228,7 +228,7 @@
 }
 
 .talkcss>.star {
-  background-image: url(../images/3_review_star.png);
+  background-image: url(../images/reviewer_star.png);
   border-color: #be28aa;
 }
 
@@ -253,7 +253,7 @@
 }
 
 .talkcss>.analyzer {
-  background-image: url(../images/4_analyzer.png);
+  background-image: url(../images/reviewer_analyzer.png);
   border-color: #0a7846;
 }
 
@@ -278,7 +278,7 @@
 }
 
 .talkcss>.noir {
-  background-image: url(../images/5_review_noir.png);
+  background-image: url(../images/reviewer_noir.png);
   border-color: #6428be;
 }
 
@@ -328,7 +328,7 @@
 }
 
 .talkcss>.bot {
-  background-image: url(../images/7_review_bot.png);
+  background-image: url(../images/reviewer_bot.png);
   border-color: #1e5a8c;
 }
 
@@ -353,7 +353,7 @@
 }
 
 .talkcss>.critic {
-  background-image: url(../images/8_the_critic.png);
+  background-image: url(../images/reviewer_critic.png);
   border-color: #323232;
 }
 

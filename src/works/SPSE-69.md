@@ -5,8 +5,10 @@ title: "触手十字架地獄13"
 work_code: "SPSE-69"
 genres:
   - battle-suit
-# keyvisual: "images/SPSE-69_Cosplayder_Heroine.jpg"
-keyvisual: "images/SPSE-69_Cosplayder_Heroine_.jpg"
+tags:
+  - tentacle
+  - crucifixion
+keyvisual: "images/SPSE-69_Cosplayder_Heroine.jpg"
 keycolor: rgb(250, 20, 20)
 
 # 基本情報
@@ -20,9 +22,9 @@ duration: "106"
 release_date: "2026-02-27"
 
 # --- Schema.org用に追加 ---
-schema_duration: "PT106M" # duration: "106分" をISO形式に変換
 schema_rating: "4.0"
-schema_review_body: "本作は…。"
+date_published: "2026-02-18"
+schema_review_body: "本作はヒロイン自身の「高慢」が招いた、論理的かつ必然的な敗北の記録である。その崩壊の過程は、主演・琥珀ややの演技力によって、極めて高い解像度で描かれている。このレビューを読んだ方々が、彼女の「堕ちる様」の美しさに、共に酔いしれてくださることを願っている。"
 
 # STORYセクションのリードテキスト
 

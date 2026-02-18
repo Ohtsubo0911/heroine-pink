@@ -12,8 +12,10 @@
   <!-- Dela Gothic One を見出しの文字のみに限定して読み込む -->
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,700&display=swap&subset=japanese" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/base.css" />
   <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/navigation.css" />
+  <link rel="stylesheet" href="/css/backtotop.css" />
 </head>
 
 <body>
@@ -24,11 +26,15 @@
     </div>
   </header>
 
+  {% include "header.njk" %}
+
   <main>
     {{ content | safe }}
   </main>
 
-  <footer id="footer" style="background-color: #000">
+  {% include "backtotop.njk" %}
+
+  <footer id="footer" style="background: #000">
     <ul>
       <li><a href="about.html#title">ABOUT US</a></li>
       <li><a href="privacy.html#title">PRIVACY POLICY</a></li>

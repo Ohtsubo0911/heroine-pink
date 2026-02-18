@@ -1,0 +1,32 @@
+<header class="site-header">
+
+  <button class="nav-toggle" aria-label="Open Navigation">
+    <img src="/images/icon_bars.svg">
+  </button>
+
+  <nav class="slide-nav">
+    <ul>
+
+      <li><a href="/"><img alt="home" src="/images/icon_home.svg" /></a></li>
+
+      {% for slug, genre in genresData %}
+        <li>
+          <a href="/genre/{{ slug }}/">
+            {{ genre.name }}
+          </a>
+        </li>
+      {% endfor %}
+
+    </ul>
+
+    <ul>
+
+      <li><a href="/about.html">ABOUT US</a></li>
+      <li><a href="/privacy.html">PRIVACY POLICY</a></li>
+
+    </ul>
+  </nav>
+
+  <div class="nav-overlay"></div>
+
+</header>

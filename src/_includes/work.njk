@@ -30,7 +30,7 @@
         "@type": "Organization",
         "name": "GIGA"
       },
-      "duration": "{{ schema_duration }}"
+      "duration": "PT{{duration}}M"
     },
     "reviewRating": {
       "@type": "Rating",
@@ -46,7 +46,7 @@
       "@type": "Organization",
       "name": "HEROINE PINK"
     },
-    "datePublished": "{{ release_date }}",
+    "datePublished": "{{ date_published }}",
     "reviewBody": "{{ schema_review_body }}"
   }
 </script>
@@ -63,24 +63,9 @@
   <link rel="stylesheet" href="/css/scenes.css" />
   <link rel="stylesheet" href="/css/review.css" />
   <link rel="stylesheet" href="/css/footer.css" />
-  <style>
-    :root {
-      --keycolor: {
-          {
-          keycolor
-        }
-      }
+  <link rel="stylesheet" href="/css/navigation.css" />
+  <link rel="stylesheet" href="/css/backtotop.css" />
 
-      ;
-    }
-
-    #title,
-    #data,
-    #footer,
-    .page_top {
-      background-color: var(--keycolor);
-    }
-  </style>
 </head>
 
 <body>
@@ -93,15 +78,17 @@
     </div>
   </header>
 
+  {% include "header.njk" %}
+
   <main>
-    <div id="title" style="background-color: {{keycolor}};">
+    <div id="title" style="background: {{keycolor}};">
       <h1>{{ title }}</h1>
     </div>
 
     <nav id="breadcrumb" aria-label="Breadcrumb">
       <ol>
         <li>
-          <a href="/"><img src="/images/icon_home.svg" /></a>
+          <a href="/"><img alt="home" src="/images/icon_home.svg" /></a>
         </li>
 
         {% if genres and genres.length > 0 %}
@@ -171,7 +158,7 @@
       {% endfor %}
     </section>
 
-    <section id="data" class="clearfix" style="background-color: {{keycolor}};">
+    <section id="data" class="clearfix" style="background: {{keycolor}};">
       <div>
 
         <h2><img src="/images/icon_data.svg"><br />DATA</h2>
@@ -186,6 +173,12 @@
         <p>監督：<a href="/director/{{ director_slug }}/">{{ director }}</a></p>
         <p>収録時間：{{ duration }}分</p>
         <p>DVDリリース日：{{ release_date }}</p>
+        <p>シチュエーション:
+          {% for tag in tags %}
+          <a href="/tags/{{ tag }}/">{{ tagData[tag].name }}</a>
+          {% if not loop.last %} {% endif %}
+          {% endfor %}
+        </p>
 
       </div>
 
@@ -220,7 +213,9 @@
 
   </main>
 
-  <footer id="footer" style="background-color: {{keycolor}};">
+  {% include "backtotop.njk" %}
+
+  <footer id="footer" style="background: {{keycolor}};">
     <ul>
       <li><a href="/about.html#title">ABOUT US</a></li>
       <li><a href="/privacy.html#title">PRIVACY POLICY</a></li>
@@ -230,6 +225,8 @@
 
   <script src="/js/smooth-scroll.js"></script>
   <script src="/js/scenes.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/backtotop.js"></script>
 
 </body>
 

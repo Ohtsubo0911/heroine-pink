@@ -76,6 +76,7 @@ nav#breadcrumb {
   max-width: 960px;
   margin: auto;
   padding: 1em;
+  font-size: 1.001em;
   font-family: "M PLUS 1p";
 }
 nav#breadcrumb ol {
