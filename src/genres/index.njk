@@ -1,0 +1,21 @@
+---
+layout: base.njk
+permalink: "/genres/"
+---
+
+<section class="genres-index">
+
+  <h1>ジャンル一覧</h1>
+
+  <ul class="genres-grid">
+    {% for genre in genresData %}
+      <li>
+        <a href="/genres/{{ genre.slug }}/">
+          <h2>{{ genre.name }}</h2>
+          <p>{{ genre.description }}</p>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+</section>

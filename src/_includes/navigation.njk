@@ -7,9 +7,9 @@
   <nav class="slide-nav">
     <ul>
 
-      {% for slug, genre in genresData %}
+      {% for genre in genresData %}
         <li>
-          <a href="/genre/{{ slug }}/">
+          <a href="/genres/{{ genre.slug }}/">
             {{ genre.name }}
           </a>
         </li>

@@ -1,22 +1,27 @@
-{
-  "magic-girl": {
+[
+  {
+    "slug": "magic-girl",
     "name": "魔法少女",
-    "description": "　"
+    "description": "変身ヒロイン、魔法少女を軸とした作品群。"
   },
-  "sailor-suits": {
+  {
+    "slug": "sailor-suits",
     "name": "セーラー",
-    "description": "　"
+    "description": "セーラー服系ヒロインを中心としたカテゴリ。"
   },
-  "ranger": {
+  {
+    "slug": "ranger",
     "name": "レンジャー",
-    "description": "　"
+    "description": "戦隊系ヒロイン作品。"
   },
-  "comics": {
+  {
+    "slug": "comics",
     "name": "アメコミ",
-    "description": "　"
+    "description": "アメリカンコミック風ヒロイン作品。"
   },
-  "battle-suit": {
+  {
+    "slug": "battle-suit",
     "name": "バトルスーツ",
-    "description": "　"
+    "description": "特殊戦闘スーツ系ヒロイン作品。"
   }
-}
+]

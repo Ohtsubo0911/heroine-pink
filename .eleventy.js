@@ -28,6 +28,11 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("./src/works/*.md");
   });
 
+  // genres コレクション
+  eleventyConfig.addCollection("genres", function(collectionApi) {
+    const genresData = require("./src/_data/genresData.json");
+    return Object.entries(genresData);
+  });
 
   // 5. Eleventyの基本設定
   return {

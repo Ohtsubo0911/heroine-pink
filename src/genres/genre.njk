@@ -1,0 +1,33 @@
+---
+layout: base.njk
+pagination:
+  data: genresData
+  size: 1
+  alias: genre
+permalink: "/genres/{{ genre.slug }}/"
+---
+
+<section class="genre-page">
+
+  <header class="genre-header">
+    <h1>{{ genre.name }}</h1>
+    {% if genre.description %}
+      <p class="genre-description">{{ genre.description }}</p>
+    {% endif %}
+  </header>
+
+  <ul class="genre-list">
+    {% for work in collections.works %}
+      {% if work.data.genres and genre.slug in work.data.genres %}
+        <li class="genre-item">
+          <a href="{{ work.url }}">
+            <img src="/{{ work.data.keyvisual }}" alt="{{ work.data.title }}">
+            <h3>{{ work.data.title }}</h3>
+            <p>{{ work.data.release_date }}</p>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+</section>
