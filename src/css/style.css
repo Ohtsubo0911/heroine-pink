@@ -35,10 +35,11 @@ body {
   clear: both;
   vertical-align: middle;
   font-size: 1.2em;
-
   font-weight: 800;
-  margin: 20px 0 10px;
-  margin-left: 2.5vw;
+
+  margin: 0 0 0 12px;
+  padding: 20px 0 10px;
+
   transform: rotate(0.05deg);
 }
 

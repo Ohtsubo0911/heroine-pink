@@ -35,10 +35,11 @@ body {
   clear: both;
   vertical-align: middle;
   font-size: 1.2em;
-
   font-weight: 600;
-  margin: 20px 0 10px;
-  margin-left: 2.5vw;
+
+  margin: 0 0 0 12px;
+  padding: 20px 0 10px;
+
   transform: rotate(0.05deg);
 }
 
@@ -57,6 +58,14 @@ body {
   font-size: 0.66em;
   line-height: 0.8em;
   vertical-align: top;
+}
+
+h2 {
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+  margin: 0 0 0.5em 0;
+  padding: 0 12px;
 }
 
 ul.item {

@@ -3,6 +3,9 @@ layout: "work.njk"
 permalink: "/{{ work_code }}/"
 title: "触手十字架地獄13"
 work_code: "SPSE-69"
+
+draft: true
+
 genres:
   - battle-suit
 tags:

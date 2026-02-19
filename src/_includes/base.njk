@@ -20,13 +20,23 @@
 
 <body>
   <header>
-    <div id="home">
+    <!-- <div id="home">
       <h1><a href="/"><span class="title">HEROINE PINK</span><br>
           <span class="tagline">対ヒロイン研究分析機関</span></a></h1>
+    </div> -->
+
+    <div id="home">
+      <p>
+        <h1><a href="/"><span class="title">TANITA</span><br>
+          <span class="tagline">対応機器一覧</span></a></h1>
+      </p>
     </div>
+
+    {% include "navigation.njk" %}
+    
   </header>
 
-  {% include "header.njk" %}
+  
 
   <main>
     {{ content | safe }}
@@ -41,6 +51,9 @@
     </ul>
     <p><a href="index.html">&copy; HROINE PINK 2025</a></p>
   </footer>
+
+  <script src="/js/navigation.js"></script>
+  <script src="/js/backtotop.js"></script>
 
 </body>
 

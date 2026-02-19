@@ -92,17 +92,17 @@
 .talkcss>.icon.named:after {
   position: absolute;
   white-space: nowrap;
-  top: -6px;
+  top: -10px;
   display: block;
   font-weight: bold;
 }
 
 .talkcss>.icon.left.named:after {
-  left: 115px;
+  left: 110px;
 }
 
 .talkcss>.icon.right.named:after {
-  right: 115px;
+  right: 110px;
 }
 
 .talkcss>.icon.named+* {
