@@ -25,6 +25,54 @@ body {
   padding: 0;
 }
 
+h1, h2, p ,ul, ol {
+  max-width: 960px;
+  margin: auto;
+}
+
+h1{
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 400;
+  margin-top: 0.5em;
+}
+
+h2 {
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  padding: 0 12px;
+}
+
+main::after {
+  content: "";
+  display: block;
+  height: 12px;
+}
+
+nav ul, 
+h2.index,
+ul.item,
+#footer ul,
+#footer p {
+  max-width: none;
+}
+
+p, li {
+  font-family: "M PLUS 1p";
+  font-size: 1.001em;
+  padding: 0 12px;
+  margin-bottom: 0.5em;
+  line-height: 1.2em;
+}
+
+ul.item li {
+  margin: 0;
+}
+
 #home h1 {
   font-family: "M PLUS 1p";
   letter-spacing: 0.1em;
@@ -58,14 +106,6 @@ body {
   font-size: 0.66em;
   line-height: 0.8em;
   vertical-align: top;
-}
-
-h2 {
-  font-family: "WDXL Lubrifont JP N", sans-serif;
-  font-size: 2em;
-  font-weight: 400;
-  margin: 0 0 0.5em 0;
-  padding: 0 12px;
 }
 
 ul.item {
@@ -109,7 +149,7 @@ ul.item li div h3{
 /* 画面幅が768px以上（タブレット・PC）で適用 */
 @media screen and (min-width: 768px) {
   ul.item {
-    grid-template-columns: repeat(3, 1fr); /* 2列固定 */
+    grid-template-columns: repeat(3, 1fr); /* 3列固定 */
     gap: 0.2em;
   }
 }
@@ -117,7 +157,15 @@ ul.item li div h3{
 /* 画面幅が1200px以上（大きなPC）で適用 */
 @media screen and (min-width: 1200px) {
   ul.item {
-    grid-template-columns: repeat(4, 1fr); /* 2列固定 */
+    grid-template-columns: repeat(4, 1fr); /* 4列固定 */
     gap: 0.2em;
+  }
+  h1{
+  margin-top: 1em;
+  }
+  main::after {
+  content: "";
+  display: block;
+  height: 3em;
   }
 }

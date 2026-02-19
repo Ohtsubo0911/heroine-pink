@@ -9,10 +9,7 @@ body { /* フッターを下部に固定 */
 #footer {
   width: 100%;
   display: block;
-  margin-top: 10vmin;
-
   margin-top: auto; /* フッターを下部に固定 */
-
 }
 
 #footer ul {
@@ -32,6 +29,7 @@ body { /* フッターを下部に固定 */
   text-align: center;
   list-style: none;
   line-height: 42px;
+  padding: 0;
 }
 
 #footer p {
