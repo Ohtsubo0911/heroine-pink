@@ -10,22 +10,30 @@ permalink: "/genres/{{ genre.slug }}/"
 <section class="genre-page">
 
   <header class="genre-header">
-    <h1>{{ genre.name }}</h1>
+    <h1>{{ genre.name }} 作品一覧</h1>
     {% if genre.description %}
       <p class="genre-description">{{ genre.description }}</p>
     {% endif %}
   </header>
 
-  <ul class="genre-list">
+  <ul class="item">
     {% for work in collections.works %}
-      {% if work.data.genres and genre.slug in work.data.genres %}
+    {% if (not work.data.draft)
+      and work.data.genres
+      and (genre.slug in work.data.genres) %}
         <li class="genre-item">
-          <a href="{{ work.url }}">
-            <img src="/{{ work.data.keyvisual }}" alt="{{ work.data.title }}">
-            <h3>{{ work.data.title }}</h3>
-            <p>{{ work.data.release_date }}</p>
-          </a>
+            <a href="{{ work.url }}">
+                <div><img src="/{{ work.data.keyvisual }}"
+                        alt="{{ work.data.title }} {% for name in work.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ work.data.release_date }}" />
+                    <h3 class="line">{{ work.data.title }}<br />
+                        {{ work.data.work_code }}<br />
+                        {% for name in work.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}<br />
+                        {{ work.data.release_date }}
+                    </h3>
+                </div>
+            </a>
         </li>
+
       {% endif %}
     {% endfor %}
   </ul>

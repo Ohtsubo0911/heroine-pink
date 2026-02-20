@@ -36,13 +36,14 @@ h1{
   font-size: 3em;
   font-weight: 400;
   margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 h2 {
   font-family: "WDXL Lubrifont JP N", sans-serif;
   font-size: 2em;
   font-weight: 400;
-  margin-top: 1em;
+  margin-top: 0;
   margin-bottom: 0.5em;
   padding: 0 12px;
 }
@@ -61,12 +62,17 @@ ul.item,
   max-width: none;
 }
 
-p, li {
+p, ul {
   font-family: "M PLUS 1p";
   font-size: 1.001em;
   padding: 0 12px;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   line-height: 1.2em;
+}
+
+ul{
+padding: 0 0 0 34px;
+max-width: 950px;
 }
 
 ul.item li {
@@ -106,6 +112,15 @@ ul.item li {
   font-size: 0.66em;
   line-height: 0.8em;
   vertical-align: top;
+}
+
+.genre-header h1{
+  font-size: 2em;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  padding: 0 12px;
+  text-align: left;
 }
 
 ul.item {
