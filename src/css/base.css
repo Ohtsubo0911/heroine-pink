@@ -48,12 +48,6 @@ h2 {
   padding: 0 12px;
 }
 
-main::after {
-  content: "";
-  display: block;
-  height: 12px;
-}
-
 nav ul, 
 h2.index,
 ul.item,

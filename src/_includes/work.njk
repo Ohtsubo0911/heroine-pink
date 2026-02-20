@@ -192,7 +192,7 @@
         <p>DVDリリース日：{{ release_date }}</p>
         <p>シチュエーション:
           {% for tag in tags %}
-          <a href="/tags/{{ tag }}/">{{ tagData[tag].name }}</a>
+          <a href="/tags/{{ tag }}/">{{ tagsData[tag].name }}</a>
           {% if not loop.last %} {% endif %}
           {% endfor %}
         </p>

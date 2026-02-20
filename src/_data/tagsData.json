@@ -1,0 +1,18 @@
+{
+  "pleasure-recognition": {
+    "name": "快楽自認",
+    "description": "　"
+  },
+  "pleasure-appeal": {
+    "name": "快楽懇願",
+    "description": "　"
+  },
+  "domination-acceptance": {
+    "name": "支配受容",
+    "description": "　"
+  },
+  "defeat-declaration": {
+    "name": "敗北宣言",
+    "description": "　"
+  }
+}

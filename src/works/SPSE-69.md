@@ -9,8 +9,7 @@ draft: true
 genres:
   - battle-suit
 tags:
-  - tentacle
-  - crucifixion
+  - pleasure-recognition
 keyvisual: "images/SPSE-69_Cosplayder_Heroine.jpg"
 keycolor: rgb(250, 20, 20)
 
