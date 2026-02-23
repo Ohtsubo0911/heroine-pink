@@ -13,7 +13,7 @@ title: "美少女戦士セーラーブラスト ～マゾ性欲覚醒計画～"
 permalink: "/{{ work_code }}/"
 
 # 公開設定
-draft: true
+# draft: true
 
 
 # =========================================================
@@ -43,7 +43,7 @@ keyvisual: "images/SPSD-78_Sailor-Blast_Heroine.jpg"
 
 # 単色例: "rgb(250, 20, 20)"
 # 二色例: "linear-gradient(135deg, #f0bc68 50%, #c4d7d1 50%)"
-keycolor: "rgb(250, 20, 20)"
+keycolor: "rgb(20, 250, 177)"
 
 
 # =========================================================

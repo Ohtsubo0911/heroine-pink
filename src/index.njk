@@ -7,20 +7,26 @@ title: "TANITA"
 <h2 class="index">作品一覧</h2>
 
 <ul class="item">
-    {% for work in collections.works %}
-        {% if not work.data.draft %}
-            <li>
-                <a href=" {{ work.url }}">
-                    <div><img src="{{ work.data.keyvisual }}"
-                            alt="{{ work.data.title }} {% for name in work.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ work.data.release_date }}" />
-                        <h3 class="line">{{ work.data.title }}<br />
-                            {{ work.data.work_code }}<br />
-                            {% for name in work.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}<br />
-                            {{ work.data.release_date }}
-                        </h3>
-                    </div>
-                </a>
-            </li>
-        {% endif %}
-    {% endfor %}
+{% set sortedWorks = collections.works | sort(false, false, "data.release_date") | reverse %}
+
+{% for work in sortedWorks %}
+    {% if not work.data.draft %}
+        <li>
+            {# 1. リンク先を相対パスにする #}
+            <a href="{{ work.url | relative(page) }}">
+                <div>
+                    {# 2. 画像パスを相対パスにする #}
+                    <img src="{{ work.data.keyvisual | relative(page) }}"
+                         alt="{{ work.data.title }} {% for name in work.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ work.data.release_date }}" />
+                    
+                    <h3 class="line">{{ work.data.title }}<br />
+                        {{ work.data.work_code }}<br />
+                        {% for name in work.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}<br />
+                        {{ work.data.release_date }}
+                    </h3>
+                </div>
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}
 </ul>

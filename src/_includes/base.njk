@@ -12,21 +12,33 @@
   <!-- Dela Gothic One を見出しの文字のみに限定して読み込む -->
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,700&display=swap&subset=japanese" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/base.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/navigation.css" />
-  <link rel="stylesheet" href="/css/backtotop.css" />
+{% if isLocal %}
+  {# ローカル保存用：インライン化 #}
+  <style>
+      {% include "css/base.css" %}
+      {% include "css/footer.css" %}
+      {% include "css/navigation.css" %}
+      {% include "css/backtotop.css" %}
+  </style>
+{% else %}
+  {# 開発・Web公開用：外部ファイル #}
+  <link rel="stylesheet" href="{{ '/css/base.css' | url }}">
+  <link rel="stylesheet" href="{{ '/css/footer.css' | url }}">
+  <link rel="stylesheet" href="{{ '/css/navigation.css' | url }}">
+  <link rel="stylesheet" href="{{ '/css/backtotop.css' | url }}">
+{% endif %}
+
 </head>
 
 <body>
   <header>
     <!-- <div id="home">
-      <h1><a href="/"><span class="title">HEROINE PINK</span><br>
+      <h1><a href="{{ ('/') | relative(page) }}"><span class="title">HEROINE PINK</span><br>
           <span class="tagline">対ヒロイン研究分析機関</span></a></h1>
     </div> -->
 
     <div id="home">
-        <h1><a href="/"><span class="title">TANITA</span><br>
+        <h1><a href="{{ ('/') | relative(page) }}"><span class="title">TANITA</span><br>
           <span class="tagline">対応機器一覧</span></a></h1>
     </div>
 
@@ -42,16 +54,29 @@
 
   {% include "backtotop.njk" %}
 
-  <footer id="footer" style="background: #000">
+  <footer id="footer" class="base" style="background: #000">
     <ul>
-      <li><a href="/about/">ABOUT US</a></li>
-      <li><a href="/privacy/">PRIVACY POLICY</a></li>
+      <li><a href="{{ ('/about/') | relative(page) }}">ABOUT US</a></li>
+      <li><a href="{{ ('/privacy/') | relative(page) }}">PRIVACY POLICY</a></li>
     </ul>
-    <p><a href="index.html">&copy; HROINE PINK 2025</a></p>
+    <p><a href="{{ ('/') | relative(page) }}">&copy; HROINE PINK 2025</a></p>
   </footer>
 
-  <script src="/js/navigation.js"></script>
-  <script src="/js/backtotop.js"></script>
+{% if isLocal %}
+  {# ローカル保存用：インライン化 #}
+  <script>
+      {% include "js/navigation.js" %}
+      {% include "js/backtotop.js" %}
+      {% include "js/smooth-scroll.js" %}
+  </script>
+{% else %}
+  {# 開発・Web公開用：外部ファイル #}
+  <script src="{{ '/js/navigation.js' | url }}"></script>
+  <script src="{{ '/js/backtotop.js' | url }}"></script>
+  <script src="{{ '/js/smooth-scroll.js' | url }}"></script>
+{% endif %}
+
+
 
 </body>
 

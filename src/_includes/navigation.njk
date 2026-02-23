@@ -1,21 +1,23 @@
 <div class="site-header">
 
   <button class="nav-toggle" aria-label="Open Navigation">
-    <img src="/images/icon_bars.svg">
+    <img src="{{ ('/images/icon_bars.svg') | relative(page) }}">
   </button>
 
   <nav class="slide-nav">
     <ul>
 
       <li class="list-home"">
-          <a href="/">
-            <img src="/images/icon_home.svg" alt="home" />
+          <a href="{{ ('/') | relative(page) }}">
+            <!-- <img src="/images/icon_home.svg" alt="home" /> -->
+            <img src="{{ ('/images/icon_home.svg') | relative(page) }}" alt="home" />
           </a>
         </li>
 
       {% for genre in genresData %}
         <li>
-          <a href="/genres/{{ genre.slug }}/">
+          <!-- <a href="./genres/{{ genre.slug }}/index.html"> -->
+          <a href="{{ ('/genres/' + genre.slug + '/') | relative(page) }}">
             {{ genre.name }}
           </a>
         </li>
@@ -25,8 +27,8 @@
 
     <ul id="common">
 
-      <li><a href="/about/">ABOUT US</a></li>
-      <li><a href="/privacy/">PRIVACY POLICY</a></li>
+      <li><a href="{{ ('/about/') | relative(page) }}">ABOUT US</a></li>
+      <li><a href="{{ ('/privacy/') | relative(page) }}">PRIVACY POLICY</a></li>
 
     </ul>
   </nav>

@@ -34,11 +34,40 @@ module.exports = function(eleventyConfig) {
     return Object.entries(genresData);
   });
 
+  // ★これを追加：環境変数から IS_LOCAL の値を取得
+  const isLocal = process.env.IS_LOCAL === 'true';
+  // ★これを追加：テンプレートで isLocal を使えるようにする
+  eleventyConfig.addGlobalData("isLocal", isLocal);
+
+  // .eleventy.js 内の relative フィルターを以下に差し替えてください
+  eleventyConfig.addFilter("relative", (url, page) => {
+    if (!url || url.startsWith("http") || url.startsWith("#")) return url;
+    
+    // パスの計算
+    const pageUrl = page.url || "";
+    const path = pageUrl.replace(/\/$/, "");
+    const depth = path.split("/").filter(Boolean).length;
+    const prefix = depth > 0 ? "../".repeat(depth) : "./";
+    
+    let target = url.replace(/^\//, "");
+
+    // ★重要：ダブルクリックで動くよう、リンク先の末尾が / なら index.html を足す
+    if (target === "" || target.endsWith("/")) {
+      target += "index.html";
+    } else if (!target.includes(".")) {
+      // 拡張子がない（フォルダ指定の）場合も index.html を補完
+      target += "/index.html";
+    }
+
+    return prefix + target;
+  });
+
   // 5. Eleventyの基本設定
   return {
     dir: {
       input: "src",
       output: "_site"
-    }
+    },
+    pathPrefix: ""
   };
 }; // ここで関数の終わり。これより下にコードを書いてはいけません

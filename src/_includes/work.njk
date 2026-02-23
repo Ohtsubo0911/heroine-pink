@@ -58,13 +58,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap&text={{ title }}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,700&display=swap&subset=japanese" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Shippori+Antique&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/scenes.css" />
-  <link rel="stylesheet" href="/css/review.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/navigation.css" />
-  <link rel="stylesheet" href="/css/backtotop.css" />
+  {% if isLocal %}
+    {# ローカル保存用：インライン化 #}
+    <style>
+        {% include "css/style.css" %}
+        {% include "css/scenes.css" %}
+        {% include "css/review.css" %}
+        {% include "css/footer.css" %}
+        {% include "css/navigation.css" %}
+        {% include "css/backtotop.css" %}
+    </style>
+  {% else %}
+    {# 開発・Web公開用：外部ファイル #}
+    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/scenes.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/review.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/footer.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/navigation.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/backtotop.css' | url }}">
+    
+  {% endif %}
 
 </head>
 
@@ -72,14 +87,14 @@
   <header>
     <!-- <div id="home">
       <p>
-        <a href="/"><span class="title">HEROINE PINK</span><br>
+        <a href="{{ ('/') | relative(page) }}"><span class="title">HEROINE PINK</span><br>
           <span class="tagline">対ヒロイン研究分析機関</span></a>
       </p>
     </div> -->
 
     <div id="home">
       <p>
-        <a href="/"><span class="title">TANITA</span><br>
+        <a href="{{ ('/') | relative(page) }}"><span class="title">TANITA</span><br>
           <span class="tagline">対応機器一覧</span></a>
       </p>
     </div>
@@ -98,7 +113,7 @@
     <nav id="breadcrumb" aria-label="Breadcrumb">
       <ol>
         <li>
-          <a href="/"><img alt="home" src="/images/icon_home.svg" /></a>
+          <a href="{{ ('/') | relative(page) }}"><img alt="home" src="{{ ('/images/icon_home.svg') | relative(page) }}" /></a>
         </li>
 
         {% if genres %}
@@ -113,7 +128,7 @@
 
           {% if genreInfo %}
             <li>
-              <a href="/genres/{{ firstGenre }}/">
+              <a href="{{ ('/genres/{{ firstGenre }}/') | relative(page) }}">
                 {{ genreInfo.name }}
               </a>
             </li>
@@ -127,27 +142,30 @@
     </nav>
 
 
-    <img id="keyvisual" src="/{{ keyvisual }}"
-      alt="{{ title }} {% for name in actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ release_date }}" />
+    <!-- <img id="keyvisual" src="/{{ keyvisual }}"
+      alt="{{ title }} {% for name in actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ release_date }}" /> -->
+    <img id="keyvisual" 
+     src="{{ keyvisual | relative(page) }}"
+     alt="{{ title }} {% for name in actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ release_date }}" />
 
     <div id="agenda">
       <ul class="clearfix">
-        <li><a href="#story"><img src="/images/icon_story.svg"><br />STORY</a></li>
-        <li><a href="#scenes"><img src="/images/icon_scenes.svg"><br />SCENES</a></li>
-        <li><a href="#data"><img src="/images/icon_data.svg"><br />DATA</a></li>
-        <li><a href="#review"><img src="/images/icon_review.svg"><br />REVIEW</a></li>
+        <li><a href="#story"><img src="{{ ('/images/icon_story.svg') | relative(page) }}"><br />STORY</a></li>
+        <li><a href="#scenes"><img src="{{ ('/images/icon_scenes.svg') | relative(page) }}"><br />SCENES</a></li>
+        <li><a href="#data"><img src="{{ ('/images/icon_data.svg') | relative(page) }}"><br />DATA</a></li>
+        <li><a href="#review"><img src="{{ ('/images/icon_review.svg') | relative(page) }}"><br />REVIEW</a></li>
       </ul>
     </div>
 
     <section id="story">
       <div id="lead">
-        <h2><img src="/images/icon_story.svg"><br />STORY</h2>
+        <h2><img src="{{ ('/images/icon_story.svg') | relative(page) }}"><br />STORY</h2>
         {{ story_lead | safe }}
       </div>
     </section>
 
     <section id="scenes">
-      <h2><img src="/images/icon_scenes.svg"><br />SCENES</h2>
+      <h2><img src="{{ ('/images/icon_scenes.svg') | relative(page) }}"><br />SCENES</h2>
 
       <p id="play"><a href="#" id="play-sequential">連続再生</a></p>
 
@@ -178,7 +196,7 @@
     <section id="data" class="clearfix" style="background: {{keycolor}};">
       <div>
 
-        <h2><img src="/images/icon_data.svg"><br />DATA</h2>
+        <h2><img src="{{ ('/images/icon_data.svg') | relative(page) }}"><br />DATA</h2>
 
         <p>作品番号：{{ work_code }}</p>
         <p>出演女優：
@@ -203,7 +221,7 @@
 
     <section id="review" class="talkcss">
 
-      <h2><img src="/images/icon_review.svg"><br />REVIEW</h2>
+      <h2><img src="{{ ('/images/icon_review.svg') | relative(page) }}"><br />REVIEW</h2>
 
       {# レビュアーの紹介パート #}
       {% for id, reviewer in review.reviewers %}
@@ -234,16 +252,29 @@
 
   <footer id="footer" style="background: {{keycolor}};">
     <ul>
-      <li><a href="/about/">ABOUT US</a></li>
-      <li><a href="/privacy/">PRIVACY POLICY</a></li>
+      <li><a href="{{ ('/about/') | relative(page) }}">ABOUT US</a></li>
+      <li><a href="{{ ('/privacy/') | relative(page) }}">PRIVACY POLICY</a></li>
     </ul>
-    <p><a href="/index.html">&copy; HROINE PINK 2025</a></p>
+    <p><a href="{{ ('/') | relative(page) }}">&copy; HROINE PINK 2025</a></p>
   </footer>
 
-  <script src="/js/smooth-scroll.js"></script>
-  <script src="/js/scenes.js"></script>
-  <script src="/js/navigation.js"></script>
-  <script src="/js/backtotop.js"></script>
+  {% if isLocal %}
+    {# ローカル保存用：インライン化 #}
+    <script>
+        {% include "js/smooth-scroll.js" %}
+        {% include "js/scenes.js" %}
+        {% include "js/navigation.js" %}
+        {% include "js/backtotop.js" %}
+        {% include "js/smooth-scroll.js" %}
+    </script>
+    {% else %}
+        {# 開発・Web公開用：外部ファイル #}
+        <script src="{{ '/js/smooth-scroll.js' | url }}"></script>
+        <script src="{{ '/js/scenes.js' | url }}"></script>
+        <script src="{{ '/js/navigation.js' | url }}"></script>
+        <script src="{{ '/js/backtotop.js' | url }}"></script>
+        <script src="{{ '/js/smooth-scroll.js' | url }}"></script>
+  {% endif %}
 
 </body>
 
