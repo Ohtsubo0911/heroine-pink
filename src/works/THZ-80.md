@@ -87,7 +87,7 @@ story_lead: |
 # default_video_src: "/videos/SPSE-69.mp4"
 
 # 本番用（R2等）
-default_video_src: "https://example.com/SPSE-69.mp4"
+default_video_src: "https://pub-1739badb7e414655a6ebb4fbc6fd24ed.r2.dev/THZ-80.mp4"
 
 
 # =========================================================
@@ -98,18 +98,83 @@ default_video_src: "https://example.com/SPSE-69.mp4"
 
 scenes:
   -
-    start: "00:00:10"
-    end: "00:00:20"
+    start: "00:15:39"
+    end: "00:15:48.4"
     top:
-      - { type: "S", align: "L", tail: "R", text: "解説テキスト" }
+      - { type: "S", align: "C", tail: "C", text: "これがあれば… あんたたちに負けないわ" }
+    bottom: 
+      - { type: "S", align: "C", tail: "C", text: "マグナチェンジ！" }
+
+  -
+    start: "00:16:55"
+    end: "00:17:02"
+    top: []
+    bottom: 
+      - { type: "S", align: "C", tail: "C", text: "マグナピンク！" }
+
+  -
+    start: "01:35:42"
+    end: "01:35:52"
+    top: 
+      - { type: "S", align: "R", tail: "R", text: "お前はよっぽど俺に犯されたいらしいな" }
+    bottom: 
+      - { type: "S", align: "L", tail: "R", text: "そんなわけないじゃない" }
+
+  -
+    start: "01:35:53"
+    end: "01:35:59"
+    top: 
+      - { type: "S", align: "L", tail: "R", text: "やめて" }
+      - { type: "S", align: "R", tail: "R", text: "俺のことが忘れられなくなったか？" }
+    bottom: 
+      - { type: "S", align: "L", tail: "R", text: "違うわ！" }
+
+  -
+    start: "01:48:46"
+    end: "01:48:54"
+    top:
+      - { type: "S", align: "R", tail: "C", text: "あぁ あぁぁ あっ あっ あぁぁぁぁ" }
     bottom: []
 
   -
-    start: "00:05:30"
-    end: "00:05:40"
+    start: "01:48:56.6"
+    end: "01:49:08"
     top:
-      - { type: "T", align: "C", tail: "C", text: "ハイライト解説" }
-    bottom: []
+      - { type: "S", align: "C", tail: "R", text: "あっ！" }
+    bottom: 
+      - { type: "S", align: "R", tail: "C", text: "んぅ… ん… ふぅー ふぅー んふぅー ふぅん…" }
+
+  -
+    start: "01:50:23"
+    end: "01:50:28"
+    top:
+      - { type: "S", align: "R", tail: "L", text: "あぁ あぁだめ あぁイっく" }
+    bottom: 
+      - { type: "S", align: "R", tail: "L", text: "あぁイっく イクイクイっく あぁ！" }
+
+  -
+    start: "01:50:28.8"
+    end: "01:50:38"
+    top:
+      - { type: "S", align: "C", tail: "R", text: "あっ！！！" }
+    bottom: 
+      - { type: "S", align: "R", tail: "L", text: "あ゛ぁ あ゛ぁ ハァ ハァ ハァ ハァ" }
+
+  -
+    start: "01:51:41"
+    end: "01:51:45.6"
+    top:
+      - { type: "S", align: "R", tail: "C", text: "あっ あっ あっ あぁ イっく" }
+    bottom:
+      - { type: "S", align: "R", tail: "L", text: "あぁ あぁ イっちゃううぅ！" }
+
+  -
+    start: "01:51:46"
+    end: "01:51:56"
+    top:
+      - { type: "S", align: "R", tail: "C", text: "あぁ あぁ イっく イっ あっ" }
+    bottom:
+    - { type: "S", align: "R", tail: "L", text: "ハァ ハァ ハァ ハァ" }
 
 
 # =========================================================

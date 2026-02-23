@@ -106,6 +106,54 @@ default_video_src: "https://pub-1739badb7e414655a6ebb4fbc6fd24ed.r2.dev/SPSD-73.
 
 scenes:
   -
+    start: "00:01:56.8"
+    end: "00:02:00.2"
+    top:
+      - { type: "S", align: "L", tail: "C", text: "プリキュア イルミネーション" }
+    bottom:
+      []
+
+  -
+    start: "00:02:53"
+    end: "00:03:00"
+    top:
+      - { type: "S", align: "C", tail: "C", text: "幸せ育む 希望の光" }
+    bottom:
+      - { type: "S", align: "C", tail: "C", text: "キュアカペラ" }
+
+  -
+    start: "00:03:01"
+    end: "00:03:08"
+    top:
+      - { type: "S", align: "C", tail: "C", text: "正義に導く 希望の光" }
+    bottom:
+      - { type: "S", align: "C", tail: "C", text: "キュアアリア" }
+
+  -
+    start: "00:03:09"
+    end: "00:03:16"
+    top:
+      - { type: "S", align: "C", tail: "C", text: "悪を焦がす 希望の光" }
+    bottom:
+      - { type: "S", align: "C", tail: "C", text: "キュアアビュール" }
+
+  -
+    start: "01:13:19.4"
+    end: "01:13:27"
+    top:
+      - { type: "S", align: "L", tail: "C", text: "ウプシロン様の…" }
+    bottom:
+      - { type: "S", align: "L", tail: "C", text: "はなまるください！" }
+  
+  -
+    start: "01:14:06"
+    end: "01:14:14.8"
+    top:
+      - { type: "S", align: "R", tail: "R", text: "ウプシロン様からの…はなまる…<br>　二人も欲しいでしょう？" }
+    bottom:
+      - { type: "S", align: "L", tail: "R", text: "そんなの欲しくない！" }
+
+  -
     start: "01:22:40"
     end: "01:22:48.2"
     top:
@@ -117,9 +165,9 @@ scenes:
     start: "01:23:06"
     end: "01:23:08.4"
     top:
-      - { type: "S", align: "C", tail: "C", text: "ウプシロン様の…おちんちんに" }
+      - { type: "S", align: "L", tail: "L", text: "お前はこのままどうされたいんだ？" }
     bottom: 
-      - { type: "S", align: "C", tail: "C", text: "は…あぁ…はなまるの…白い精子ください" }
+      []
 
   -
     start: "01:23:09"
@@ -131,11 +179,27 @@ scenes:
 
   -
     start: "01:23:24"
+    end: "01:23:31"
+    top:
+      - { type: "S", align: "C", tail: "C", text: "あぁぁ あぁ 好き！ あぁぁぁ…" }
+    bottom: 
+      - { type: "S", align: "C", tail: "C", text: "あぁ…イクイクイクイクイクイクイク…" }
+
+  -
+    start: "01:23:31.4"
     end: "01:23:50"
     top:
-      - { type: "S", align: "C", tail: "C", text: "ウプシロン様の…おちんちんに" }
+      - { type: "S", align: "R", tail: "C", text: "イっちゃう！" }
     bottom: 
-      - { type: "S", align: "C", tail: "C", text: "は…あぁ…はなまるの…白い精子ください" }
+      - { type: "S", align: "R", tail: "C", text: "イク！イク！イクイクイク！" }
+
+  -
+    start: "01:23:45"
+    end: "01:23:54.4"
+    top:
+      - { type: "S", align: "R", tail: "L", text: "あぁ… あっ…" }
+    bottom: 
+      - { type: "S", align: "C", tail: "R", text: "ハァ ハァ ハァ" }
 
 
 # =========================================================
