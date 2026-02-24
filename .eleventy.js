@@ -6,9 +6,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addGlobalData("isProduction", isProduction);
 
   // 2. パススルーコピー (srcフォルダ内の素材をそのまま出力フォルダへ)
-  eleventyConfig.addPassthroughCopy("src/css");
+  // ※ CSS/JS はテンプレート内の `_includes` に配置されているため、出力先をマップしてコピーする
+  eleventyConfig.addPassthroughCopy({ "src/_includes/css": "css" });
   eleventyConfig.addPassthroughCopy("src/images");
-  eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy({ "src/_includes/js": "js" });
   eleventyConfig.addPassthroughCopy("src/videos");
   eleventyConfig.addWatchTarget("./src/works/");
   
