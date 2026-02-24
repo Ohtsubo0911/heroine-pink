@@ -148,7 +148,7 @@ scenes:
     start: "01:50:23"
     end: "01:50:28"
     top:
-      - { type: "S", align: "R", tail: "L", text: "あぁ あぁだめ あぁイっく" }
+      - { type: "S", align: "R", tail: "L", text: "あぁ あぁだめ" }
     bottom: 
       - { type: "S", align: "R", tail: "L", text: "あぁイっく イクイクイっく あぁ！" }
 

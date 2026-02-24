@@ -59,19 +59,21 @@
       <li><a href="{{ ('/about/') | relative(page) }}">ABOUT US</a></li>
       <li><a href="{{ ('/privacy/') | relative(page) }}">PRIVACY POLICY</a></li>
     </ul>
-    <p><a href="{{ ('/') | relative(page) }}">&copy; HROINE PINK 2025</a></p>
+    <p><a href="{{ ('/') | relative(page) }}">&copy; HROINE PINK <span id="current-year">2025</span></a></p>
   </footer>
 
 {% if isLocal %}
   {# ローカル保存用：インライン化 #}
   <script>
       {% include "js/navigation.js" %}
+      {% include "js/footer.js" %}
       {% include "js/backtotop.js" %}
       {% include "js/smooth-scroll.js" %}
   </script>
 {% else %}
   {# 開発・Web公開用：外部ファイル #}
   <script src="{{ '/js/navigation.js' | url }}"></script>
+  <script src="{{ '/js/footer.js' | url }}"></script>
   <script src="{{ '/js/backtotop.js' | url }}"></script>
   <script src="{{ '/js/smooth-scroll.js' | url }}"></script>
 {% endif %}
