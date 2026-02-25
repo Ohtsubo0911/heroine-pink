@@ -77,6 +77,9 @@ release_date: "2026-01-01"
 # 例: "4.5"
 schema_rating: "4.0"
 
+# 形式: YYYY-MM-DD
+date_published: "2026-02-18"
+
 schema_review_body: "作品全体の要約を200文字程度で入力"
 
 
