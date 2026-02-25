@@ -118,6 +118,7 @@ ul.item li {
 }
 
 ul.item {
+  margin-top: -1em;
   padding: 0.4em 12px 0 12px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2列固定 */
