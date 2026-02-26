@@ -18,6 +18,15 @@ module.exports = function(eleventyConfig) {
     return array.find(item => item[field] === value);
   });
 
+  // 文字列の末尾から指定の文字を削る（sitemap で使用）
+  eleventyConfig.addFilter("trimEnd", (str, search) => {
+    if (typeof str !== "string" || typeof search !== "string") return str;
+    while (str.endsWith(search)) {
+      str = str.slice(0, -search.length);
+    }
+    return str;
+  });
+
   // 4. カスタムフィルター: 0埋め (例: 1 -> 01)
   // ※ ここが module.exports の内側に収まっている必要があります
   eleventyConfig.addFilter("padStart", (string, targetLength, padString) => {
