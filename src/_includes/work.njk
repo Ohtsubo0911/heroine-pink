@@ -201,11 +201,11 @@
         <p>作品番号：{{ work_code }}</p>
         <p>出演女優：
           {% for name in actress %}
-          {% set slug = actress_slugs[loop.index0] %}
-          <a href="/actress/{{ slug }}/">{{ name }}</a>{% if not loop.last %} {% endif %}
+          {% set slug = name | getActressSlug %}
+          <a href="/actresses/{{ slug }}/">{{ name }}</a>{% if not loop.last %} {% endif %}
           {% endfor %}
         </p>
-        <p>監督：<a href="/director/{{ director_slug }}/">{{ director }}</a></p>
+        <p>監督：<a href="/directors/{{ director | getDirectorSlug }}/">{{ director }}</a></p>
         <p>収録時間：{{ duration }}分</p>
         <p>DVDリリース日：{{ release_date }}</p>
         <p>シチュエーション:

@@ -1,0 +1,38 @@
+---
+layout: base.njk
+pagination:
+  data: directorsData
+  size: 1
+  alias: director
+permalink: "/directors/{{ director.slug }}/"
+---
+
+<section class="director-page">
+
+  <header class="director-header">
+    <h1>{{ director.name }} 作品一覧</h1>
+  </header>
+
+  <ul class="item">
+    {% for work in collections.works %}
+      {% if (not work.data.draft)
+            and work.data.director
+            and ((work.data.director | getDirectorSlug) == director.slug) %}
+        <li class="genre-item">
+            <a href="{{ work.url | relative(page) }}">
+                <div><img src="{{ work.data.keyvisual | relative(page) }}"
+                        alt="{{ work.data.title }} {% for name in work.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ work.data.release_date }}" />
+                    <h3 class="line">{{ work.data.title }}<br />
+                        {{ work.data.work_code }}<br />
+                        {% for name in work.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}<br />
+                        {{ work.data.release_date }}
+                    </h3>
+                </div>
+            </a>
+        </li>
+
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+</section>

@@ -22,6 +22,13 @@
           </a>
         </li>
       {% endfor %}
+    </ul>
+
+    <ul>
+
+      <!-- 女優・監督一覧への簡易リンク -->
+      <li><a href="{{ ('/actresses/') | relative(page) }}">女優一覧</a></li>
+      <li><a href="{{ ('/directors/') | relative(page) }}">監督一覧</a></li>
 
     </ul>
 

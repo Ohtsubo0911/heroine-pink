@@ -1,0 +1,33 @@
+---
+layout: base.njk
+permalink: "/actresses/"
+---
+
+<section class="actresses-index">
+
+  <h1>女優一覧</h1>
+
+  <ul class="genres-grid">
+
+    {% for a in actressesData %}
+      {% set count = 0 %}
+
+      {% for work in collections.works %}
+        {% if (not work.data.draft) and work.data.actress %}
+          {% for actressName in work.data.actress %}
+            {% if (actressName | getActressSlug) == a.slug %}
+              {% set count = count + 1 %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+
+      <li>
+        <a href="/actresses/{{ a.slug }}/">
+          <h2>{{ a.name }}（{{ count }}）</h2>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+</section>

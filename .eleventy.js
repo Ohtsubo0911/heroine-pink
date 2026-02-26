@@ -24,6 +24,20 @@ module.exports = function(eleventyConfig) {
     return String(string).padStart(targetLength, padString);
   });
 
+  // 女優の名前から slug を取得するフィルター
+  eleventyConfig.addFilter("getActressSlug", (name) => {
+    const actressesData = require("./src/_data/actressesData.json");
+    const actress = actressesData.find(a => a.name === name);
+    return actress ? actress.slug : null;
+  });
+
+  // 監督の名前から slug を取得するフィルター
+  eleventyConfig.addFilter("getDirectorSlug", (name) => {
+    const directorsData = require("./src/_data/directorsData.json");
+    const director = directorsData.find(d => d.name === name);
+    return director ? director.slug : null;
+  });
+
     // 5. 作品コレクション
   eleventyConfig.addCollection("works", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/works/*.md");
@@ -33,6 +47,18 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("genres", function(collectionApi) {
     const genresData = require("./src/_data/genresData.json");
     return Object.entries(genresData);
+  });
+
+  // 女優データ (actressesData.json) をそのまま返すコレクション
+  eleventyConfig.addCollection("actresses", function(collectionApi) {
+    const actressesData = require("./src/_data/actressesData.json");
+    return actressesData;
+  });
+
+  // 監督データ (directorsData.json) をそのまま返すコレクション
+  eleventyConfig.addCollection("directors", function(collectionApi) {
+    const directorsData = require("./src/_data/directorsData.json");
+    return directorsData;
   });
 
   // ★これを追加：環境変数から IS_LOCAL の値を取得

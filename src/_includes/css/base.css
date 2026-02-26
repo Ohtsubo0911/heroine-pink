@@ -108,13 +108,50 @@ ul.item li {
   vertical-align: top;
 }
 
-.genre-header h1{
+.genre-header h1,
+.actresses-header h1,
+.director-header h1 {
   font-size: 2em;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 0.5em;
   padding: 0 12px;
   text-align: left;
+}
+
+.genres-index ul,
+.actresses-index ul,
+.directors-index ul {
+  list-style: none;
+  padding:0;
+  line-height: normal;
+}
+
+.genres-index li,
+.actresses-index li,
+.directors-index li {
+  float: left;
+}
+
+.genres-index li h2,
+.actresses-index li h2,
+.directors-index li h2 {
+  font-size: 2em;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    padding: 0 12px;
+}
+
+.genres-index li a,
+.actresses-index li a,
+.directors-index li a {
+  color: #000;
+}
+.genres-index li a:hover,
+.actresses-index li a:hover,
+.directors-index li a:hover {
+  text-decoration: none;
 }
 
 ul.item {
