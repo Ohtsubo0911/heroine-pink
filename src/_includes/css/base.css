@@ -48,6 +48,13 @@ h2 {
   padding: 0 12px;
 }
 
+h3 {
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  padding: 0 12px;
+}
+
 nav ul, 
 h2.index,
 ul.item,
@@ -56,16 +63,17 @@ ul.item,
   max-width: none;
 }
 
-p, ul {
+p, ul, ol {
   font-family: "M PLUS 1p";
   font-size: 1.001em;
   padding: 0 12px;
   margin-bottom: 1em;
   line-height: 1.2em;
+  text-align: justify;
 }
 
-ul{
-padding: 0 0 0 34px;
+ul, ol{
+padding: 0 12px 0 34px;
 max-width: 950px;
 }
 
