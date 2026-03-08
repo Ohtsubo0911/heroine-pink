@@ -233,6 +233,10 @@ nav#breadcrumb ol li a img {
   text-decoration: none;
 }
 
+#footer {
+  margin-top: 3vmin !important;
+}
+
 .clearfix::after {
   content: "";
   display: block;

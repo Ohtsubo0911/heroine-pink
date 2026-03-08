@@ -54,6 +54,10 @@ keyvisual: "images/SPSE-69_Cosplayder_Heroine.jpg"
 # 二色例: "linear-gradient(135deg, #f0bc68 50%, #c4d7d1 50%)"
 keycolor: "rgb(250, 20, 20)"
 
+# バナー画像のパスを指定
+# 例: bannervisual: "images/SPSE-76/SPSE-76_L.jpg"
+bannervisual: "images/SPSE-76/SPSE-76_L.jpg"
+
 
 # =========================================================
 # ■ 基本情報（必須）
@@ -62,11 +66,13 @@ keycolor: "rgb(250, 20, 20)"
 actress:
   - 女優名を入力
 
-# slug形式（例: Yaya-Kohaku）
+# slug形式（例: Yaya-Kohaku）不要
 actress_slugs:
   - Actress-Slug
 
 director: 監督名
+
+# 不要
 director_slug: Director-Slug
 
 # 数字のみ（分）

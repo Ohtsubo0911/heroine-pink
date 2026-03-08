@@ -4,14 +4,15 @@ permalink: "/{{ work_code }}/"
 title: "触手十字架地獄13"
 work_code: "SPSE-69"
 
-draft: true
+# draft: true
 
 genres:
   - battle-suit
 tags:
   - pleasure-recognition
-keyvisual: "images/SPSE-69_Cosplayder_Heroine.jpg"
+keyvisual: "images/SPSE-69/SPSE-69_Cosplayder_Heroine.jpg"
 keycolor: rgb(250, 20, 20)
+bannervisual: "images/SPSE-69/SPSE-69_L.jpg"
 
 # 基本情報
 actress:
@@ -49,33 +50,51 @@ default_video_src: "https://pub-1739badb7e414655a6ebb4fbc6fd24ed.r2.dev/SPSE-69.
 
 scenes:
   -
-    start: "00:00:16"
-    end: "00:00:17"
+    start: "00:01:05"
+    end: "00:01:09"
     top:
       - { type: "S", align: "L", tail: "R", text: "ビデオの冒頭シーンです。" }
     bottom: []
 
   - 
-    start: "00:26"
-    end: "00:27"
+    start: "01:49"
+    end: "01:57"
     top:
       - { type: "S", align: "C", tail: "L", text: "10秒地点から始まるハイライトシーン！" }
     bottom: []
 
-  - start: "46"
-    end: "47"
+  - start: "1:09:16"
+    end: "1:09:24"
     top:
       - { type: "T", align: "C", tail: "C", text: "クライマックス！" }
     bottom: []
 
-  - start: "49"
-    end: "50"
+  - start: "1:13:16"
+    end: "1:13:20"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "クライマックス！" }
+    bottom: []
+
+  - start: "1:13:24"
+    end: "1:13:28"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "クライマックス！" }
+    bottom: []
+
+  - start: "1:19:32"
+    end: "1:19:40"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "クライマックス！" }
+    bottom: []
+
+  - start: "1:22:44"
+    end: "1:22:52"
     top:
       - { type: "S", align: "C", tail: "C", text: "クライマックス！" }
     bottom: []
 
-  - start: "0:00:58"
-    end: "0:00:59"
+  - start: "1:25:14"
+    end: "1:25:22"
     top:
       - { type: "S", align: "C", tail: "C", text: "クライマックス！" }
     bottom: []

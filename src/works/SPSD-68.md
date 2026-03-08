@@ -4,7 +4,7 @@
 # =========================================================
 
 layout: "work.njk"
-work_code: "SPSD-68X"
+work_code: "SPSD-68"
 title: "ヒロイン変身失敗 ウェネト"
 permalink: "/{{ work_code }}/"
 

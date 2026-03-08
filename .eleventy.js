@@ -1,4 +1,4 @@
-﻿// .eleventy.js
+﻿﻿// .eleventy.js
 
 module.exports = function(eleventyConfig) {
   // 1. 環境変数の設定 (開発か本番か)
@@ -47,9 +47,11 @@ module.exports = function(eleventyConfig) {
     return director ? director.slug : null;
   });
 
-    // 5. 作品コレクション
+  // 5. 作品コレクション (draft: true を除外)
   eleventyConfig.addCollection("works", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/works/*.md");
+    return collectionApi.getFilteredByGlob("./src/works/*.md").filter(
+      item => !item.data.draft
+    );
   });
 
   // genres コレクション
@@ -57,17 +59,42 @@ module.exports = function(eleventyConfig) {
     const genresData = require("./src/_data/genresData.json");
     return Object.entries(genresData);
   });
-
-  // 女優データ (actressesData.json) をそのまま返すコレクション
+  
+  // 女優データ (actressesData.json) を、作品が存在する女優のみにフィルタリングして返すコレクション
   eleventyConfig.addCollection("actresses", function(collectionApi) {
     const actressesData = require("./src/_data/actressesData.json");
-    return actressesData;
+    // draftではない公開作品を取得
+    const works = collectionApi.getFilteredByGlob("./src/works/*.md").filter(item => !item.data.draft);
+
+    const activeActresses = new Set();
+    for (const work of works) {
+      if (work.data.actress && Array.isArray(work.data.actress)) {
+        for (const actressName of work.data.actress) {
+          activeActresses.add(actressName);
+        }
+      } else if (work.data.actress && typeof work.data.actress === 'string') {
+        // 文字列で指定されている場合も考慮して追加
+        activeActresses.add(work.data.actress);
+      }
+    }
+
+    return actressesData.filter(actress => activeActresses.has(actress.name));
   });
 
-  // 監督データ (directorsData.json) をそのまま返すコレクション
+  // 監督データ (directorsData.json) を、作品が存在する監督のみにフィルタリングして返すコレクション
   eleventyConfig.addCollection("directors", function(collectionApi) {
     const directorsData = require("./src/_data/directorsData.json");
-    return directorsData;
+    // draftではない公開作品を取得
+    const works = collectionApi.getFilteredByGlob("./src/works/*.md").filter(item => !item.data.draft);
+    
+    const activeDirectors = new Set();
+    for (const work of works) {
+      if (work.data.director) {
+        activeDirectors.add(work.data.director);
+      }
+    }
+
+    return directorsData.filter(director => activeDirectors.has(director.name));
   });
 
   // ★これを追加：環境変数から IS_LOCAL の値を取得

@@ -9,7 +9,7 @@ title: "スパークルスターメルピュア！ 儚く消える星の輝き"
 permalink: "/{{ work_code }}/"
 
 # 公開設定
-draft: true
+# draft: true
 
 
 # =========================================================
@@ -37,7 +37,8 @@ tags:
 # =========================================================
 
 keyvisual: "images/SPSD-73_Pure-Aria_Pure-Abuel_Pure-Capella_Heroine.jpg"
-keycolor: "linear-gradient(135deg, #5e96ff 0%, #5e96ff 35%, #ff5eb9 35%, #ff5eb9 65%, #fed86f 65%, #fed86f 100%)"
+keycolor: "linear-gradient(135deg, #5e96ff 35%, #ff3aaa 35%, #ff3aaa 65%, #ffd04d 65%)"
+bannervisual: "images/SPSD-73_L.jpg"
 
 
 # =========================================================
