@@ -98,14 +98,33 @@ scenes:
     start: "00:00:10"
     end: "00:00:20"
     top:
-      - { type: "S", align: "L", tail: "R", text: "解説テキスト" }
+      - { type: "S", align: "L", tail: "R", text: "【動画シーン】導入10秒、敵接触で主導権を失う" }
     bottom: []
 
   -
     start: "00:05:30"
     end: "00:05:40"
     top:
-      - { type: "T", align: "C", tail: "C", text: "ハイライト解説" }
+      - { type: "T", align: "C", tail: "C", text: "【動画シーン】5:30以降、反応の鈍化と従属性が進行" }
+    bottom: []
+
+
+# =========================================================
+# ■ SCENES img パネル
+# Type: S/T align: L/C/R tail: L/C/R/N 
+# =========================================================
+
+scenes_img:
+  -
+    img: "images/SPSB-09/SPSB-09_01.jpg"
+    top:
+      - { type: "S", align: "L", tail: "R", text: "【画像シーン】拘束直後の表情変化を確認" }
+    bottom: []
+
+  -
+    img: "images/SPSB-09/SPSB-09_02.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
     bottom: []
 
 

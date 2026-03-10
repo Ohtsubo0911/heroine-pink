@@ -1,0 +1,385 @@
+@charset "utf-8";
+
+.talkcss {
+  display: block;
+  padding: 1em;
+  max-width: 960px;
+  margin: auto;
+}
+
+.talkcss>* {
+  margin: 16px 0;
+  padding: initial;
+  line-height: normal;
+  font-size: 1.001em;
+  font-family: "M PLUS 1p";
+}
+
+.talkcss h2 {
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+  font-size: 3em;
+  text-align: center;
+  margin-top: 0.5em;
+  font-weight: normal;
+}
+
+.talkcss h3 {
+  clear: both;
+  padding-top: 2em;
+  text-align: center;
+  font-size: 2em;
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+  font-weight: normal;
+}
+
+.talkcss p{
+  text-align: justify;
+  text-align-last: left;
+}
+
+.talkcss p a:link, .talkcss p a:visited{
+  color: #000;
+}
+.talkcss p a:hover{
+  text-decoration: none;
+}
+
+.talkcss:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.talkcss>.left.icon,
+.talkcss>.right.icon,
+.talkcss>.left:not(.icon)+.left:not(.icon),
+.talkcss>.right:not(.icon)+.left:not(.icon),
+.talkcss>.right:not(.icon)+.right:not(.icon),
+.talkcss>.left:not(.icon)+.right:not(.icon) {
+  clear: both;
+}
+
+.talkcss>.left.icon,
+.talkcss>.right.icon {
+  background-color: white;
+  display: inline-block;
+  width: 92px;
+  height: 92px;
+  background-position: center middle;
+  background-size: cover;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 4px;
+}
+
+.talkcss>.left.icon {
+  float: left;
+  margin-right: 15px;
+
+}
+
+.talkcss>.right.icon {
+  float: right;
+  margin-left: 15px;
+
+}
+
+.talkcss>.icon.named {
+  position: relative;
+  font-style: normal;
+}
+
+.talkcss>.icon.named:after {
+  position: absolute;
+  white-space: nowrap;
+  top: -10px;
+  display: block;
+  font-weight: bold;
+}
+
+.talkcss>.icon.left.named:after {
+  left: 110px;
+}
+
+.talkcss>.icon.right.named:after {
+  right: 110px;
+}
+
+.talkcss>.icon.named+* {
+  margin-top: 35px;
+}
+
+.talkcss>.left.icon+*,
+.talkcss>.right.icon+*,
+.talkcss>.left:not(.icon),
+.talkcss>.right:not(.icon) {
+  position: relative;
+  padding: 14px 20px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
+.talkcss>.left.icon+*,
+.talkcss>.right.icon+* {
+  max-width: 60%;
+  max-width: -webkit-calc(80% - 60px);
+  max-width: calc(74% - 60px);
+}
+
+.talkcss>.left:not(.icon),
+.talkcss>.right:not(.icon) {
+  max-width: 80%;
+}
+
+.talkcss>.left.icon+*:before,
+.talkcss>.right.icon+*:before,
+.talkcss>.left:not(.icon):before,
+.talkcss>.right:not(.icon):before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border-top: 3px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid transparent;
+}
+
+.talkcss>.left.icon+*,
+.talkcss>.left:not(.icon) {
+  float: left;
+  background-color: lightskyblue;
+}
+
+.talkcss>.left.icon+*:before,
+.talkcss>.left:not(.icon):before {
+  border-right: 10px solid lightskyblue;
+  left: -14px;
+}
+
+.talkcss>.right.icon+*,
+.talkcss>.right:not(.icon) {
+  float: right;
+  background-color: lightgreen;
+}
+
+.talkcss>.right.icon+*:before,
+.talkcss>.right:not(.icon):before {
+  border-left: 10px solid lightgreen;
+  right: -14px;
+}
+
+.talkcss>.dr.named:after {
+  content: "Dr.レビュウ";
+  color: #1e0a8c;
+}
+
+.talkcss>.dr {
+  background-image: url("{{ ('/images/reviewer_dr.png') | relative(page) }}");
+  border-color: #1e0a8c;
+}
+
+.talkcss>.dr.icon+*,
+.talkcss>.dr:not(.icon) {
+  background-color: #c7c2e2;
+}
+
+.talkcss>.dr.left.icon+*:before,
+.talkcss>.left:not(.icon):before {
+  border-right: 10px solid #c7c2e2;
+}
+
+.talkcss>.dr.right.icon+*:before,
+.talkcss>.right:not(.icon):before {
+  border-left: 10px solid #c7c2e2;
+}
+
+.talkcss>.judge.named:after {
+  content: "ジャッジ・Ｘ";
+  color: #5a641e;
+}
+
+.talkcss>.judge {
+  background-image: url("{{ ('/images/reviewer_judge.png') | relative(page) }}");
+  border-color: #5a641e;
+}
+
+.talkcss>.judge.icon+*,
+.talkcss>.judge:not(.icon) {
+  background-color: #d6d8c7;
+}
+
+.talkcss>.judge.left.icon+*:before,
+.talkcss>.left:not(.icon):before {
+  border-right: 10px solid #d6d8c7;
+}
+
+.talkcss>.judge.right.icon+*:before,
+.talkcss>.right:not(.icon):before {
+  border-left: 10px solid #d6d8c7;
+}
+
+.talkcss>.star.named:after {
+  content: "レビュ★スター";
+  color: #be28aa;
+}
+
+.talkcss>.star {
+  background-image: url("{{ ('/images/reviewer_star.png') | relative(page) }}");
+  border-color: #be28aa;
+}
+
+.talkcss>.star.icon+*,
+.talkcss>.star:not(.icon) {
+  background-color: #efc9ea;
+}
+
+.talkcss>.star.left.icon+*:before,
+.talkcss>.left:not(.icon):before {
+  border-right: 10px solid #efc9ea;
+}
+
+.talkcss>.star.right.icon+*:before,
+.talkcss>.right:not(.icon):before {
+  border-left: 10px solid #efc9ea;
+}
+
+.talkcss>.analyzer.named:after {
+  content: "アナライザー";
+  color: #0a7846;
+}
+
+.talkcss>.analyzer {
+  background-image: url("{{ ('/images/reviewer_analyzer.png') | relative(page) }}");
+  border-color: #0a7846;
+}
+
+.talkcss>.analyzer.icon+*,
+.talkcss>.analyzer:not(.icon) {
+  background-color: #c2ddd1;
+}
+
+.talkcss>.analyzer.left.icon+*:before,
+.talkcss>.left:not(.icon):before {
+  border-right: 10px solid #c2ddd1;
+}
+
+.talkcss>.analyzer.right.icon+*:before,
+.talkcss>.right:not(.icon):before {
+  border-left: 10px solid #c2ddd1;
+}
+
+.talkcss>.noir.named:after {
+  content: "レビュ・ノワール";
+  color: #6428be;
+}
+
+.talkcss>.noir {
+  background-image: url("{{ ('/images/reviewer_noir.png') | relative(page) }}");
+  border-color: #6428be;
+}
+
+.talkcss>.noir.icon+*,
+.talkcss>.noir:not(.icon) {
+  background-color: #d8c9ef;
+}
+
+.talkcss>.noir.left.icon+*:before,
+.talkcss>.left:not(.icon):before {
+  border-right: 10px solid #d8c9ef;
+}
+
+.talkcss>.noir.right.icon+*:before,
+.talkcss>.right:not(.icon):before {
+  border-left: 10px solid #d8c9ef;
+}
+
+.talkcss>.madame.named:after {
+  content: "マダム・アルゴリズム";
+  color: #821e14;
+}
+
+.talkcss>.madame {
+  background-image: url("{{ ('/images/reviewer_madame.png') | relative(page) }}");
+  border-color: #821e14;
+}
+
+.talkcss>.madame.icon+*,
+.talkcss>.madame:not(.icon) {
+  background-color: #e0c7c4;
+}
+
+.talkcss>.madame.left.icon+*:before,
+.talkcss>.left:not(.icon):before {
+  border-right: 10px solid #e0c7c4;
+}
+
+.talkcss>.madame.right.icon+*:before,
+.talkcss>.right:not(.icon):before {
+  border-left: 10px solid #e0c7c4;
+}
+
+.talkcss>.bot.named:after {
+  content: "レビューボット";
+  color: #1e5a8c;
+}
+
+.talkcss>.bot {
+  background-image: url("{{ ('/images/reviewer_bot.png') | relative(page) }}");
+  border-color: #1e5a8c;
+}
+
+.talkcss>.bot.icon+*,
+.talkcss>.bot:not(.icon) {
+  background-color: #c7d6e2;
+}
+
+.talkcss>.bot.left.icon+*:before,
+.talkcss>.left:not(.icon):before {
+  border-right: 10px solid #c7d6e2;
+}
+
+.talkcss>.bot.right.icon+*:before,
+.talkcss>.right:not(.icon):before {
+  border-left: 10px solid #c7d6e2;
+}
+
+.talkcss>.critic.named:after {
+  content: "ザ・クリティック";
+  color: #323232;
+}
+
+.talkcss>.critic {
+  background-image: url("{{ ('/images/reviewer_critic.png') | relative(page) }}");
+  border-color: #323232;
+}
+
+.talkcss>.critic.icon+*,
+.talkcss>.critic:not(.icon) {
+  background-color: #cccccc;
+}
+
+.talkcss>.critic.left.icon+*:before,
+.talkcss>.left:not(.icon):before {
+  border-right: 10px solid #cccccc;
+}
+
+.talkcss>.critic.right.icon+*:before,
+.talkcss>.right:not(.icon):before {
+  border-left: 10px solid #cccccc;
+}
+
+.talkcss>.left.icon.introduction+*,
+.talkcss>.left:not(.icon) {
+  float: left;
+  background-color: white;
+}
+
+.talkcss>.left.icon.introduction+*:before,
+.talkcss>.left:not(.icon):before {
+  border-right: 10px solid white;
+  left: -14px;
+}

@@ -195,6 +195,31 @@
       {% endfor %}
     </section>
 
+    <section id="scenes" class="image-scenes">
+      <h2><img src="{{ ('/images/icon_scenes.svg') | relative(page) }}"><br />SCENES</h2>
+
+      {% set image_scenes = scenes_img or [] %}
+      {% for scene in image_scenes %}
+      {% set current_img_src = scene.img or scene.img_src or default_img_src %}
+
+      <div class="scenes-detail">
+        <div class="top">
+          {% for bubble in scene.top %}
+          <p class="{{ bubble.type }} {{ bubble.align }} tail-{{ bubble.tail }}">{{ bubble.text | safe }}</p>
+          {% endfor %}
+        </div>
+        <div class="img-area">
+          <img src="{{ current_img_src | relative(page) }}" />
+        </div>
+        <div class="bottom">
+          {% for bubble in scene.bottom %}
+          <p class="{{ bubble.type }} {{ bubble.align }} tail-{{ bubble.tail }}">{{ bubble.text | safe }}</p>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+
     <div class="scroll-container" id="parallax-section">
       <div class="sticky-wrapper">
         <a href="#">
