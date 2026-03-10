@@ -25,7 +25,7 @@ body {
   padding: 0;
 }
 
-h1, h2, p ,ul, ol {
+h1, h2, h3, p ,ul, ol {
   max-width: 960px;
   margin: auto;
 }
@@ -36,6 +36,7 @@ h1{
   font-size: 3em;
   font-weight: 400;
   margin-top: 0.5em;
+  margin-top: 0;
   margin-bottom: 0.5em;
 }
 
@@ -52,6 +53,7 @@ h3 {
   font-family: "WDXL Lubrifont JP N", sans-serif;
   font-size: 1.5em;
   font-weight: 400;
+  margin-bottom: 0.5em;
   padding: 0 12px;
 }
 
@@ -68,17 +70,21 @@ p, ul, ol {
   font-size: 1.001em;
   padding: 0 12px;
   margin-bottom: 1em;
-  line-height: 1.2em;
+  line-height: 1.8em;
   text-align: justify;
 }
 
 ul, ol{
-padding: 0 12px 0 34px;
-max-width: 950px;
+padding: 0 12px 0 40px;
+max-width: 920px;
 }
 
 ul.item li {
   margin: 0;
+}
+
+p a {
+  color: #000;
 }
 
 #home h1 {
@@ -125,6 +131,13 @@ ul.item li {
   margin-bottom: 0.5em;
   padding: 0 12px;
   text-align: left;
+  max-width: none;
+}
+
+.genre-header p,
+.actresses-header p,
+.director-header p {
+  max-width: none;
 }
 
 .genres-index ul,
@@ -217,6 +230,7 @@ ul.item li div h3{
   }
   h1{
   margin-top: 1em;
+  margin-top: 0;
   }
   main::after {
   content: "";

@@ -113,9 +113,10 @@ scenes:
     start: "00:01:56.8"
     end: "00:02:00.2"
     top:
-      - { type: "S", align: "L", tail: "C", text: "プリキュア イルミネーション" }
+      - { type: "S", align: "L", tail: "C", text: "メルピュア イルミネーション" }
+      - { type: "S", align: "R", tail: "C", text: "メルピュア イルミネーション" }
     bottom:
-      []
+      - { type: "S", align: "C", tail: "C", text: "メルピュア イルミネーション" }
 
   -
     start: "00:02:53"

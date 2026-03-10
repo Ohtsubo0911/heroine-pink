@@ -66,13 +66,13 @@ bannervisual: "images/SPSE-76/SPSE-76_L.jpg"
 actress:
   - 女優名を入力
 
-# slug形式（例: Yaya-Kohaku）不要
+# slug形式（例: Yaya-Kohaku）src/_data/actressesData.json に記載があれば省略可能
 actress_slugs:
   - Actress-Slug
 
 director: 監督名
 
-# 不要
+# src/_data/directorsData.json に記載があれば省略可能
 director_slug: Director-Slug
 
 # 数字のみ（分）

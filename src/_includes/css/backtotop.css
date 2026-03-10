@@ -4,8 +4,8 @@
   bottom: 12px;
   z-index: 1000;
 
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 
   border: 4px #FFF solid;
   border-radius: 50%;
@@ -30,7 +30,7 @@
 .back-to-top img{
   filter: invert(92%) sepia(91%) saturate(40%) hue-rotate(218deg) brightness(108%) contrast(100%);
   vertical-align: middle;
-  width: 30px;
+  width: 75%;
 }
 
 .back-to-top.visible {
