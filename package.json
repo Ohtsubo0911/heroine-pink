@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "eleventy --serve --output=_site_web",
     "build": "npm run build:web",
     "build:local": "set IS_LOCAL=true&& eleventy --output=_site_local",
     "build:web": "eleventy --output=_site_web"

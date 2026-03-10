@@ -166,59 +166,58 @@
       </div>
     </section>
 
-    <section id="scenes">
-      <h2><img src="{{ ('/images/icon_scenes.svg') | relative(page) }}"><br />SCENES</h2>
+    {% if isLocal %}
+      <section id="scenes">
+        <h2><img src="{{ ('/images/icon_scenes.svg') | relative(page) }}"><br />SCENES</h2>
 
-      <p id="play"><a href="#" id="play-sequential">連続再生</a></p>
+        <p id="play"><a href="#" id="play-sequential">連続再生</a></p>
 
-      {% for scene in scenes %}
-      {% set current_video_src = scene.video_src or default_video_src %}
+        {% for scene in scenes %}
+        {% set current_video_src = scene.video_src or default_video_src %}
 
-      <div class="scenes-detail">
-        <div class="top">
-          {% for bubble in scene.top %}
-          <p class="{{ bubble.type }} {{ bubble.align }} tail-{{ bubble.tail }}">{{ bubble.text | safe }}</p>
-          {% endfor %}
+        <div class="scenes-detail">
+          <div class="top">
+            {% for bubble in scene.top %}
+            <p class="{{ bubble.type }} {{ bubble.align }} tail-{{ bubble.tail }}">{{ bubble.text | safe }}</p>
+            {% endfor %}
+          </div>
+          <div class="video-area">
+            <video id="play-sequential" src="{{ current_video_src }}" playsinline muted {% if scene.start %}data-start="{{ scene.start }}" {% endif %} {% if scene.end %}data-end="{{ scene.end }}" {% endif %}></video>
+          </div>
+          <div class="bottom">
+            {% for bubble in scene.bottom %}
+            <p class="{{ bubble.type }} {{ bubble.align }} tail-{{ bubble.tail }}">{{ bubble.text | safe }}</p>
+            {% endfor %}
+          </div>
         </div>
-        <div class="video-area">
-          {# ↓↓↓ data-start と data-end 属性を追加 ↓↓↓ #}
-          <video id="play-sequential" src="{{ current_video_src }}" playsinline muted {% if scene.start %}data-start="{{ scene.start }}" {%
-            endif %} {% if scene.end %}data-end="{{ scene.end }}" {% endif %}>
-          </video>
-        </div>
-        <div class="bottom">
-          {% for bubble in scene.bottom %}
-          <p class="{{ bubble.type }} {{ bubble.align }} tail-{{ bubble.tail }}">{{ bubble.text | safe }}</p>
-          {% endfor %}
-        </div>
-      </div>
-      {% endfor %}
-    </section>
+        {% endfor %}
+      </section>
+    {% else %}
+      <section id="scenes" class="image-scenes">
+        <h2><img src="{{ ('/images/icon_scenes.svg') | relative(page) }}"><br />SCENES</h2>
 
-    <section id="scenes" class="image-scenes">
-      <h2><img src="{{ ('/images/icon_scenes.svg') | relative(page) }}"><br />SCENES</h2>
+        {% set image_scenes = scenes_img or [] %}
+        {% for scene in image_scenes %}
+        {% set current_img_src = scene.img or scene.img_src or default_img_src %}
 
-      {% set image_scenes = scenes_img or [] %}
-      {% for scene in image_scenes %}
-      {% set current_img_src = scene.img or scene.img_src or default_img_src %}
-
-      <div class="scenes-detail">
-        <div class="top">
-          {% for bubble in scene.top %}
-          <p class="{{ bubble.type }} {{ bubble.align }} tail-{{ bubble.tail }}">{{ bubble.text | safe }}</p>
-          {% endfor %}
+        <div class="scenes-detail">
+          <div class="top">
+            {% for bubble in scene.top %}
+            <p class="{{ bubble.type }} {{ bubble.align }} tail-{{ bubble.tail }}">{{ bubble.text | safe }}</p>
+            {% endfor %}
+          </div>
+          <div class="img-area">
+            <img src="{{ current_img_src | relative(page) }}" />
+          </div>
+          <div class="bottom">
+            {% for bubble in scene.bottom %}
+            <p class="{{ bubble.type }} {{ bubble.align }} tail-{{ bubble.tail }}">{{ bubble.text | safe }}</p>
+            {% endfor %}
+          </div>
         </div>
-        <div class="img-area">
-          <img src="{{ current_img_src | relative(page) }}" />
-        </div>
-        <div class="bottom">
-          {% for bubble in scene.bottom %}
-          <p class="{{ bubble.type }} {{ bubble.align }} tail-{{ bubble.tail }}">{{ bubble.text | safe }}</p>
-          {% endfor %}
-        </div>
-      </div>
-      {% endfor %}
-    </section>
+        {% endfor %}
+      </section>
+    {% endif %}
 
     <div class="scroll-container" id="parallax-section">
       <div class="sticky-wrapper">
