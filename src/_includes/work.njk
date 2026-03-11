@@ -69,7 +69,6 @@
         {% include "css/footer.css" %}
         {% include "css/navigation.css" %}
         {% include "css/backtotop.css" %}
-        {% include "css/parallax-banner.css" %}
     </style>
   {% else %}
     {# 開発・Web公開用：外部ファイル #}
@@ -219,6 +218,7 @@
       </section>
     {% endif %}
 
+    {% if not isLocal %}
     <div class="scroll-container" id="parallax-section">
       <div class="sticky-wrapper">
         <a href="{{ affiliate_url }}" target="_blank" rel="noopener noreferrer">
@@ -227,6 +227,7 @@
         </a>
       </div>
     </div>
+    {% endif %}
 
     <section id="data" class="clearfix" style="background: {{keycolor}};">
       <div>
@@ -283,6 +284,7 @@
 
   </main>
 
+    {% if not isLocal %}
     <div class="scroll-container" id="parallax-section">
       <div class="sticky-wrapper">
         <a href="{{ affiliate_url }}" target="_blank" rel="noopener noreferrer">
@@ -291,6 +293,7 @@
         </a>
       </div>
     </div>
+    {% endif %}
 
   {% include "backtotop.njk" %}
 

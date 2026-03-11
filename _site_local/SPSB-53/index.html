@@ -1100,113 +1100,6 @@ body { /* フッターを下部に固定 */
   pointer-events: auto;
 }
 
-        ﻿@charset "utf-8";
-
-  .scroll-container {
-    height: 220vh; /* スクロールさせる距離 */
-    /* 親要素をタイムラインの基準にする */
-    view-timeline-name: --section-scroll;
-    view-timeline-axis: block;
-  }
-
-  .sticky-wrapper {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .sticky-wrapper a {
-    line-height: 0%; /* 画像の下の余白を消す */
-  }
-
-  .sliding-item {
-    /* 1. 画像の本来のサイズから比率を定義 */
-    --orig-width: 1014;
-    --orig-height: 680;
-    --aspect-ratio: calc(var(--orig-width) / var(--orig-height));
-    
-    /* 2. 現在の画面高さ(100vh)における「実際の画像の幅」を計算 */
-    --actual-img-width: calc(100vh * var(--aspect-ratio));
-
-    /* 3. 見た目の設定（ゆがませない） */
-    height: 100vh;
-    width: var(--actual-img-width);
-    object-fit: cover;
-    
-    /* 4. アニメーション設定 */
-    animation: move-x cubic-bezier(0.75, 0, 0.25, 1) both;
-    animation-timeline: --section-scroll;
-    animation-range: cover 25% cover 75%;
-  }
-
-    .sticky-wrapper .reverse {
-    /* 4. アニメーション設定 */
-    animation: move-x-reverse cubic-bezier(0.75, 0, 0.25, 1) both;
-    animation-timeline: --section-scroll;
-    animation-range: cover 25% cover 75%;
-  }
-
-  @keyframes move-x {
-    from { 
-      transform: translateX(calc((var(--actual-img-width) / 2) - 50vw)); 
-    }
-    to { 
-      transform: translateX(calc(50vw - (var(--actual-img-width) / 2))); 
-    }
-  }
-  @keyframes move-x-reverse {
-    from {
-      transform: translateX(calc(50vw - (var(--actual-img-width) / 2)));
-    }
-    to { 
-      transform: translateX(calc((var(--actual-img-width) / 2) - 50vw)); 
-    }
-  }
-
-/* 画面幅が768px以上（タブレット・PC）で適用 */
-@media screen and (min-width: 768px) {
-  .scroll-container {
-    /* パララックスが必要ない場合は、高さも100vhに詰めると余白が消えます */
-    height: auto; 
-    min-height: auto;
-  }
-
-  .sticky-wrapper {
-    height: auto;
-  }
-
-  .sliding-item,
-  .sticky-wrapper .reverse {
-    /* 1. アニメーションを解除 */
-    animation: none;
-    
-    /* 2. アニメーションで動かしていた位置を中央にリセット */
-    transform: none;
-    
-    /* 3. 画像が画面幅より大きい場合に突き抜けないよう調整 */
-    width: 100%;
-    max-width: 960px; /* 画像の最大幅を制限 */
-    object-fit: contain; /* 画面に収めるならcontain、隙間なく埋めるならcover */
-    
-    /* 4. view-timelineによる制御も無効化 */
-    animation-timeline: auto;
-  }
-
-  .sticky-wrapper img {
-    height: auto;
-  }
-}
-
-/* 画面幅が1200px以上（大きなPC）で適用 */
-@media screen and (min-width: 1200px) {
-  /* 必要に応じて、最大幅の制限などを追加 */
-  .sliding-item {
-    max-width: 960px;
-  }
-}
     </style>
   
 
@@ -1425,13 +1318,7 @@ body { /* フッターを下部に固定 */
       </section>
     
 
-    <div class="scroll-container" id="parallax-section">
-      <div class="sticky-wrapper">
-        <a href="#">
-          <img src="" alt="Parallax Image" class="sliding-item reverse">
-        </a>
-      </div>
-    </div>
+    
 
     <section id="data" class="clearfix" style="background: linear-gradient(135deg, #4cbaff 50%, #ff71d9 50%);">
       <div>
@@ -1523,13 +1410,7 @@ body { /* フッターを下部に固定 */
 
   </main>
 
-    <div class="scroll-container" id="parallax-section">
-      <div class="sticky-wrapper">
-        <a href="#">
-          <img src="" alt="Parallax Image" class="sliding-item">
-        </a>
-      </div>
-    </div>
+    
 
   <a href="#home" class="back-to-top" aria-label="Back to Top">
   <img src="../images/icon_arrow-up.svg">
