@@ -19,6 +19,10 @@
   .sticky-wrapper a {
     line-height: 0%; /* 画像の下の余白を消す */
   }
+  .sticky-wrapper a:link,
+  .sticky-wrapper a:visited {
+    color: #fff;
+  }
 
   .sliding-item {
     /* 1. 画像の本来のサイズから比率を定義 */
@@ -27,10 +31,10 @@
     --aspect-ratio: calc(var(--orig-width) / var(--orig-height));
     
     /* 2. 現在の画面高さ(100vh)における「実際の画像の幅」を計算 */
-    --actual-img-width: calc(100vh * var(--aspect-ratio));
+    --actual-img-width: calc(90vh * var(--aspect-ratio));
 
     /* 3. 見た目の設定（ゆがませない） */
-    height: 100vh;
+    height: 90vh;
     width: var(--actual-img-width);
     object-fit: cover;
     
@@ -46,6 +50,29 @@
     animation-timeline: --section-scroll;
     animation-range: cover 25% cover 75%;
   }
+
+  .red-btn {
+    font-family: "M PLUS 1p", sans-serif;
+    height:5vh;
+    line-height:5vh;
+    width:18em;
+    text-align:center;
+    font-size: 1.001em;
+    border-radius:100px;
+    background-color: rgba( 0, 0, 0, 1);
+    color: white;
+    margin:2vh auto;
+    padding: 0.5vh;
+    background-image: url("../images/icon_new-window.svg");
+    background-repeat: no-repeat;
+    background-position: right 12% center;
+    background-size: 1.6em;
+}
+
+#data,
+#footer{
+  margin-top: 0 !important; /* red-btn のレイアウトに因り上部マージン削除 */
+}
 
   @keyframes move-x {
     from { 

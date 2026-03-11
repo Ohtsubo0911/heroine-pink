@@ -58,6 +58,9 @@ keycolor: "rgb(250, 20, 20)"
 # 例: bannervisual: "images/SPSE-76/SPSE-76_L.jpg"
 bannervisual: "images/SPSE-76/SPSE-76_L.jpg"
 
+# バナーのリンク先を指定
+affiliate_url: "https://www.yahoo.co.jp/"
+
 
 # =========================================================
 # ■ 基本情報（必須）
@@ -117,7 +120,7 @@ default_video_src: "https://example.com/SPSE-69.mp4"
 
 
 # =========================================================
-# ■ SCENESパネル
+# ■ SCENESパネル（ローカルのみ）
 # start/end は "00:01:23" 形式推奨
 # Type: S/T align: L/C/R tail: L/C/R/N 
 # =========================================================
@@ -139,7 +142,7 @@ scenes:
 
 
 # =========================================================
-# ■ SCENES img パネル
+# ■ SCENES img パネル（ウェブのみ）
 # Type: S/T align: L/C/R tail: L/C/R/N 
 # =========================================================
 
