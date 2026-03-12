@@ -1,4 +1,6 @@
-﻿// .eleventy.js
+// .eleventy.js
+
+const Image = require("@11ty/eleventy-img");
 
 module.exports = function(eleventyConfig) {
   // 1. 環境変数の設定 (開発か本番か)
@@ -29,7 +31,32 @@ module.exports = function(eleventyConfig) {
   });
 
 
-  // 5. Eleventyの基本設定
+  // 6. WebP キービジュアル生成ショートコード (第1段階: 作品詳細のメイン画像)
+  eleventyConfig.addAsyncShortcode("webpKeyvisual", async function(src, alt) {
+    const path = require("node:path");
+    const normalizedSrc = path.normalize(src);
+    if (path.isAbsolute(normalizedSrc) || normalizedSrc.startsWith("..")) {
+      throw new Error(`webpKeyvisual: 不正な画像パスです: ${src}`);
+    }
+    const metadata = await Image(`src/${normalizedSrc}`, {
+      widths: ["auto"],
+      formats: ["webp"],
+      outputDir: "_site/images/",
+      urlPath: "/images/",
+      sharpWebpOptions: {
+        quality: 65,
+        effort: 6,
+      },
+    });
+    return Image.generateHTML(metadata, {
+      id: "keyvisual",
+      alt: alt,
+      loading: "lazy",
+      decoding: "async",
+    });
+  });
+
+  // 7. Eleventyの基本設定
   return {
     dir: {
       input: "src",

@@ -123,8 +123,8 @@
       </ol>
     </nav>
 
-    <img id="keyvisual" src="/{{ keyvisual }}"
-      alt="{{ title }} {% for name in actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ release_date }}" />
+    {% set keyvisualAlt %}{{ title }} {% for name in actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ release_date }}{% endset %}
+    {% webpKeyvisual keyvisual, keyvisualAlt %}
 
     <div id="agenda">
       <ul class="clearfix">
