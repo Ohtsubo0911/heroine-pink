@@ -78,7 +78,9 @@
     <link rel="stylesheet" href="{{ '/css/footer.css' | url }}">
     <link rel="stylesheet" href="{{ '/css/navigation.css' | url }}">
     <link rel="stylesheet" href="{{ '/css/backtotop.css' | url }}">
+    {% if bannervisual %}
     <link rel="stylesheet" href="{{ '/css/parallax-banner.css' | url }}">
+    {% endif %}
     
   {% endif %}
 
@@ -218,7 +220,7 @@
       </section>
     {% endif %}
 
-    {% if not isLocal %}
+    {% if not isLocal and bannervisual %}
     <div class="scroll-container" id="parallax-section">
       <div class="sticky-wrapper">
         <a href="{{ affiliate_url }}" target="_blank" rel="noopener noreferrer">
@@ -284,7 +286,7 @@
 
   </main>
 
-    {% if not isLocal %}
+    {% if not isLocal and bannervisual %}
     <div class="scroll-container" id="parallax-section">
       <div class="sticky-wrapper">
         <a href="{{ affiliate_url }}" target="_blank" rel="noopener noreferrer">
