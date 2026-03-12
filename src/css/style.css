@@ -103,10 +103,10 @@ nav#breadcrumb ol li a img {
   margin-top: 0.35rem;
 }
 
-#keyvisual {
+#keyvisual img {
   display: block;
   margin: 0 auto;
-  max-Width: 480px;
+  max-width: 480px;
   width: 100%;
 }
 

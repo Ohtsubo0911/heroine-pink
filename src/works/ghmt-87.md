@@ -2,6 +2,9 @@
 layout: "work.njk"
 title: "美少女戦士セーラーディオーレ 魔獣となったフレイアとアクアスが襲う！"
 work_code: "GHMT-87"
+public:
+  - local
+  - web
 keyvisual: "images/GHMT-87_Sailor-Deore_Heroine.jpg"
 keycolor: rgb(250, 20, 20)
 
