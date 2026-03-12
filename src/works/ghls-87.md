@@ -2,6 +2,7 @@
 layout: "work.njk"
 title: "ヒロイン従属 いいなりヒロイン 美少女戦士セーラーメリウス"
 work_code: "GHLS-87"
+public: ["local", "web"]
 keyvisual: "images/GHMT-87_Sailor-Deore_Heroine.jpg"
 keycolor: rgb(250, 20, 20)
 

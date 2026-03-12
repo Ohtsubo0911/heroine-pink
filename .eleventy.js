@@ -3,6 +3,7 @@
 module.exports = function(eleventyConfig) {
   // 1. 環境変数の設定 (開発か本番か)
   const isProduction = process.env.NODE_ENV === 'production';
+  const buildTarget = isProduction ? "web" : "local";
   eleventyConfig.addGlobalData("isProduction", isProduction);
 
   // 2. パススルーコピー (srcフォルダ内の素材をそのまま出力フォルダへ)
@@ -23,9 +24,24 @@ module.exports = function(eleventyConfig) {
     return String(string).padStart(targetLength, padString);
   });
 
-    // 5. 作品コレクション
+  // 5. publicフィールドによる出力制御
+  // public: ["local", "web"] → 両方に出力
+  // public: ["local"]        → ローカル用にのみ出力
+  // public: ["web"]          → ウェブ用にのみ出力
+  // public: []               → どこにも出力しない
+  // publicフィールドなし     → 両方に出力（後方互換）
+  const isPublicInBuild = (pub) => !Array.isArray(pub) || pub.includes(buildTarget);
+
+  eleventyConfig.addPreprocessor("publicFilter", "md", (data) => {
+    if (!isPublicInBuild(data.public)) {
+      return false; // 出力しない、コレクションからも除外
+    }
+  });
+
+  // 6. 作品コレクション
   eleventyConfig.addCollection("works", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/works/*.md");
+    return collectionApi.getFilteredByGlob("./src/works/*.md")
+      .filter(item => isPublicInBuild(item.data.public));
   });
 
 
