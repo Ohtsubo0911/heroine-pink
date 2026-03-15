@@ -13,7 +13,7 @@ permalink: "/directors/"
       {% set count = 0 %}
 
       {% for work in collections.works %}
-        {% if (not work.data.draft)
+        {% if (work.data | isPublic(publishTarget))
               and work.data.director
               and ((work.data.director | getDirectorSlug) == d.slug) %}
           {% set count = count + 1 %}

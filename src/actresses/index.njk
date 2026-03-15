@@ -13,7 +13,7 @@ permalink: "/actresses/"
       {% set count = 0 %}
 
       {% for work in collections.works %}
-        {% if (not work.data.draft) and work.data.actress %}
+        {% if (work.data | isPublic(publishTarget)) and work.data.actress %}
           {% for actressName in work.data.actress %}
             {% if (actressName | getActressSlug) == a.slug %}
               {% set count = count + 1 %}

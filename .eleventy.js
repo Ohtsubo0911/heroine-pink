@@ -5,6 +5,31 @@ module.exports = function(eleventyConfig) {
   const isProduction = process.env.NODE_ENV === 'production';
   eleventyConfig.addGlobalData("isProduction", isProduction);
 
+  // 公開ターゲット (local / web)
+  const isLocal = process.env.IS_LOCAL === 'true';
+  const publishTarget = isLocal ? "local" : "web";
+  eleventyConfig.addGlobalData("isLocal", isLocal);
+  eleventyConfig.addGlobalData("publishTarget", publishTarget);
+
+  // public 未指定時は draft を後方互換として扱う
+  const isVisibleForTarget = (data, target = publishTarget) => {
+    if (!data || typeof data !== "object") return true;
+
+    if (Array.isArray(data.public)) {
+      return data.public.includes(target);
+    }
+
+    if (typeof data.public === "string") {
+      return data.public === target;
+    }
+
+    return !data.draft;
+  };
+
+  eleventyConfig.addFilter("isPublic", (data, target = publishTarget) => {
+    return isVisibleForTarget(data, target);
+  });
+
   // 2. パススルーコピー (srcフォルダ内の素材をそのまま出力フォルダへ)
   // ※ CSS/JS はテンプレート内の `_includes` に配置されているため、出力先をマップしてコピーする
   eleventyConfig.addPassthroughCopy({ "src/_includes/css": "css" });
@@ -47,10 +72,10 @@ module.exports = function(eleventyConfig) {
     return director ? director.slug : null;
   });
 
-  // 5. 作品コレクション (draft: true を除外)
+  // 5. 作品コレクション (public で公開範囲を制御)
   eleventyConfig.addCollection("works", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/works/*.md").filter(
-      item => !item.data.draft
+      item => isVisibleForTarget(item.data)
     );
   });
 
@@ -63,8 +88,7 @@ module.exports = function(eleventyConfig) {
   // 女優データ (actressesData.json) を、作品が存在する女優のみにフィルタリングして返すコレクション
   eleventyConfig.addCollection("actresses", function(collectionApi) {
     const actressesData = require("./src/_data/actressesData.json");
-    // draftではない公開作品を取得
-    const works = collectionApi.getFilteredByGlob("./src/works/*.md").filter(item => !item.data.draft);
+    const works = collectionApi.getFilteredByGlob("./src/works/*.md").filter(item => isVisibleForTarget(item.data));
 
     const activeActresses = new Set();
     for (const work of works) {
@@ -84,8 +108,7 @@ module.exports = function(eleventyConfig) {
   // 監督データ (directorsData.json) を、作品が存在する監督のみにフィルタリングして返すコレクション
   eleventyConfig.addCollection("directors", function(collectionApi) {
     const directorsData = require("./src/_data/directorsData.json");
-    // draftではない公開作品を取得
-    const works = collectionApi.getFilteredByGlob("./src/works/*.md").filter(item => !item.data.draft);
+    const works = collectionApi.getFilteredByGlob("./src/works/*.md").filter(item => isVisibleForTarget(item.data));
     
     const activeDirectors = new Set();
     for (const work of works) {
@@ -96,11 +119,6 @@ module.exports = function(eleventyConfig) {
 
     return directorsData.filter(director => activeDirectors.has(director.name));
   });
-
-  // ★これを追加：環境変数から IS_LOCAL の値を取得
-  const isLocal = process.env.IS_LOCAL === 'true';
-  // ★これを追加：テンプレートで isLocal を使えるようにする
-  eleventyConfig.addGlobalData("isLocal", isLocal);
 
   // .eleventy.js 内の relative フィルターを以下に差し替えてください
   eleventyConfig.addFilter("relative", (url, page) => {

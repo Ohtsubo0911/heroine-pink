@@ -13,7 +13,7 @@ permalink: "/genres/"
       {% set count = 0 %}
 
       {% for work in collections.works %}
-        {% if (not work.data.draft)
+        {% if (work.data | isPublic(publishTarget))
               and work.data.genres
               and (genre.slug in work.data.genres) %}
           {% set count = count + 1 %}

@@ -15,7 +15,11 @@ title: "作品タイトルを入力"
 permalink: "/{{ work_code }}/"
 
 # 公開設定
-draft: true
+# public: ["local", "web"]  両方に表示
+# public: ["local"]          ローカルのみ表示
+# public: ["web"]            Webのみ表示
+# public: []                 どこにも表示しない
+public: []
 
 
 # =========================================================

@@ -15,7 +15,7 @@ permalink: "/actresses/{{ actress.slug }}/"
 
   <ul class="item">
     {% for work in collections.works %}
-      {% if (not work.data.draft) and work.data.actress %}
+      {% if (work.data | isPublic(publishTarget)) and work.data.actress %}
         {% set actressMatch = false %}
         {% for actressName in work.data.actress %}
           {% if (actressName | getActressSlug) == actress.slug %}
