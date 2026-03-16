@@ -14,7 +14,8 @@ permalink: "/actresses/{{ actress.slug }}/"
   </header>
 
   <ul class="item">
-    {% for work in collections.works %}
+    {% set sortedWorks = collections.works | sort(false, false, "data.release_date") | reverse %}
+    {% for work in sortedWorks %}
       {% if (work.data | isPublic(publishTarget)) and work.data.actress %}
         {% set actressMatch = false %}
         {% for actressName in work.data.actress %}
