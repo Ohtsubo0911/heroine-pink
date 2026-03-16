@@ -1,11 +1,26 @@
 [
   {
-    "slug": "narita-tsumugi",
-    "name": "成田つむぎ",
+    "slug": "Touka-Rinne",
+    "name": "凛音とうか",
     "aliases": []
   },
   {
-    "slug": "tsuji-meairi",
+    "slug": "Mitsuki-Nagisa",
+    "name": "渚みつき",
+    "aliases": []
+  },
+  {
+    "slug": "Yuha-Kiriyama",
+    "name": "桐山結羽",
+    "aliases": []
+  },
+  {
+    "slug": "Ena-Satsuki",
+    "name": "沙月恵奈",
+    "aliases": []
+  },
+  {
+    "slug": "Tsuji-Meairi",
     "name": "辻芽愛里",
     "aliases": []
   },
