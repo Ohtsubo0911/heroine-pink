@@ -17,7 +17,8 @@ permalink: "/genres/{{ genre.slug }}/"
   </header>
 
   <ul class="item">
-    {% for work in collections.works %}
+    {% set sortedWorks = collections.works | sort(false, false, "data.release_date") | reverse %}
+    {% for work in sortedWorks %}
     {% if (work.data | isPublic(publishTarget))
       and work.data.genres
       and (genre.slug in work.data.genres) %}
