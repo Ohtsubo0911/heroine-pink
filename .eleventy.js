@@ -61,7 +61,10 @@ module.exports = function(eleventyConfig) {
   // 女優の名前から slug を取得するフィルター
   eleventyConfig.addFilter("getActressSlug", (name) => {
     const actressesData = require("./src/_data/actressesData.json");
-    const actress = actressesData.find(a => a.name === name);
+    const actress = actressesData.find(a => {
+      if (a.name === name) return true;
+      return Array.isArray(a.aliases) && a.aliases.includes(name);
+    });
     return actress ? actress.slug : null;
   });
 
@@ -90,19 +93,29 @@ module.exports = function(eleventyConfig) {
     const actressesData = require("./src/_data/actressesData.json");
     const works = collectionApi.getFilteredByGlob("./src/works/*.md").filter(item => isVisibleForTarget(item.data));
 
-    const activeActresses = new Set();
+    const activeActressSlugs = new Set();
+    const getActressSlugByName = (name) => {
+      const actress = actressesData.find(a => {
+        if (a.name === name) return true;
+        return Array.isArray(a.aliases) && a.aliases.includes(name);
+      });
+      return actress ? actress.slug : null;
+    };
+
     for (const work of works) {
       if (work.data.actress && Array.isArray(work.data.actress)) {
         for (const actressName of work.data.actress) {
-          activeActresses.add(actressName);
+          const slug = getActressSlugByName(actressName);
+          if (slug) activeActressSlugs.add(slug);
         }
       } else if (work.data.actress && typeof work.data.actress === 'string') {
         // 文字列で指定されている場合も考慮して追加
-        activeActresses.add(work.data.actress);
+        const slug = getActressSlugByName(work.data.actress);
+        if (slug) activeActressSlugs.add(slug);
       }
     }
 
-    return actressesData.filter(actress => activeActresses.has(actress.name));
+    return actressesData.filter(actress => activeActressSlugs.has(actress.slug));
   });
 
   // 監督データ (directorsData.json) を、作品が存在する監督のみにフィルタリングして返すコレクション
