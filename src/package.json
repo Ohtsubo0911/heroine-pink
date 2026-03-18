@@ -1,5 +1,10 @@
-"scripts": {
-  "start": "eleventy --serve",
-  "build:local": "$env:IS_LOCAL='true'; eleventy",
-  "build:web": "eleventy"
+{
+  "name": "heroine-pink-src",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build:local": "IS_LOCAL=true eleventy",
+    "build:web": "eleventy"
+  }
 }

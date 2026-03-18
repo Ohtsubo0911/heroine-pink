@@ -31,43 +31,45 @@ module.exports = function(eleventyConfig) {
     return src.replace(/^[./]+/, "").replace(/\\/g, "/").replace(/\/+/g, "/");
   };
 
-  eleventyConfig.addNunjucksAsyncFilter("toWebp", async (src, category = "main", callback) => {
-    try {
-      if (typeof src !== "string" || src.length === 0 || !shouldConvertToWebp(category)) {
-        callback(null, src);
-        return;
-      }
-
-      const normalizedSrc = normalizeImagePath(src);
-      const inputPath = path.join(process.cwd(), "src", normalizedSrc);
-
-      if (!fs.existsSync(inputPath)) {
-        callback(null, src);
-        return;
-      }
-
-      const metadata = await Image(inputPath, {
-        widths: [null],
-        formats: ["webp"],
-        outputDir: path.join(process.cwd(), imageBuildOutputDir, "images/optimized"),
-        urlPath: "/images/optimized/",
-        sharpWebpOptions: {
-          quality: 65,
-          effort: 6
+  eleventyConfig.addNunjucksAsyncFilter("toWebp", (src, category = "main", callback) => {
+    (async () => {
+      try {
+        if (typeof src !== "string" || src.length === 0 || !shouldConvertToWebp(category)) {
+          callback(null, src);
+          return;
         }
-      });
 
-      const webp = metadata.webp && metadata.webp[0];
-      if (!webp || !webp.url) {
+        const normalizedSrc = normalizeImagePath(src);
+        const inputPath = path.join(process.cwd(), "src", normalizedSrc);
+
+        if (!fs.existsSync(inputPath)) {
+          callback(null, src);
+          return;
+        }
+
+        const metadata = await Image(inputPath, {
+          widths: [null],
+          formats: ["webp"],
+          outputDir: path.join(process.cwd(), imageBuildOutputDir, "images/optimized"),
+          urlPath: "/images/optimized/",
+          sharpWebpOptions: {
+            quality: 65,
+            effort: 6
+          }
+        });
+
+        const webp = metadata.webp && metadata.webp[0];
+        if (!webp || !webp.url) {
+          callback(null, src);
+          return;
+        }
+
+        callback(null, webp.url.replace(/^\//, ""));
+      } catch (error) {
+        console.warn(`[toWebp] Failed to convert image: ${src}`);
         callback(null, src);
-        return;
       }
-
-      callback(null, webp.url.replace(/^\//, ""));
-    } catch (error) {
-      console.warn(`[toWebp] Failed to convert image: ${src}`);
-      callback(null, src);
-    }
+    })();
   });
 
   eleventyConfig.addGlobalData("isLocal", isLocal);
