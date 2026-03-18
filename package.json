@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "npm run build:web && eleventy --serve --ignore-initial --output=_site_web",
+    "start": "rm -rf _site && ELEVENTY_IMG_PHASE=0 eleventy --serve --output=_site",
     "build": "npm run build:web",
     "build:local": "rm -rf _site_local && IS_LOCAL=true ELEVENTY_IMG_PHASE=3 eleventy --output=_site_local && node scripts/prune-optimized-images.cjs _site_local",
     "build:web": "rm -rf _site_web && ELEVENTY_IMG_PHASE=3 eleventy --output=_site_web && node scripts/prune-optimized-images.cjs _site_web"
