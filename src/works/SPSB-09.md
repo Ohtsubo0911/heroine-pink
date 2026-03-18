@@ -7,7 +7,7 @@ layout: "work.njk"
 work_code: "SPSB-09"
 title: "サイバー戦隊ジャスティオン ホワイトバニー 美肉実験室"
 permalink: "/{{ work_code }}/"
-public: "local"
+public: ["local"]
 
 
 # =========================================================
