@@ -24,7 +24,7 @@ permalink: "/genres/{{ genre.slug }}/"
       and (genre.slug in work.data.genres) %}
         <li class="genre-item">
             <a href="{{ work.url | relative(page) }}">
-                <div><img src="{{ work.data.keyvisual | relative(page) }}"
+                <div><img src="{{ work.data.keyvisual | toWebp('thumb') | relative(page) }}"
                         alt="{{ work.data.title }} {% for name in work.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ work.data.release_date }}" />
                     <h3 class="line">{{ work.data.title }}<br />
                         {{ work.data.work_code }}<br />

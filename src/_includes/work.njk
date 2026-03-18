@@ -148,7 +148,7 @@
     <!-- <img id="keyvisual" src="/{{ keyvisual }}"
       alt="{{ title }} {% for name in actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ release_date }}" /> -->
     <img id="keyvisual" 
-     src="{{ keyvisual | relative(page) }}"
+     src="{{ keyvisual | toWebp('main') | relative(page) }}"
      alt="{{ title }} {% for name in actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ release_date }}" />
 
     <div id="agenda">
@@ -208,7 +208,7 @@
             {% endfor %}
           </div>
           <div class="img-area">
-            <img src="{{ current_img_src | relative(page) }}" />
+            <img src="{{ current_img_src | toWebp('scene') | relative(page) }}" />
           </div>
           <div class="bottom">
             {% for bubble in scene.bottom %}
@@ -224,7 +224,7 @@
     <div class="scroll-container" id="parallax-section">
       <div class="sticky-wrapper">
         <a href="{{ affiliate_url }}" target="_blank" rel="noopener noreferrer">
-          <img src="{{ bannervisual | relative(page) }}" alt="Parallax Image" class="sliding-item reverse">
+          <img src="{{ bannervisual | toWebp('banner') | relative(page) }}" alt="Parallax Image" class="sliding-item reverse">
           <div class="red-btn">FANZAで本編を見る</div>
         </a>
       </div>
@@ -290,7 +290,7 @@
     <div class="scroll-container" id="parallax-section">
       <div class="sticky-wrapper">
         <a href="{{ affiliate_url }}" target="_blank" rel="noopener noreferrer">
-          <img src="{{ bannervisual | relative(page) }}" alt="Parallax Image" class="sliding-item">
+          <img src="{{ bannervisual | toWebp('banner') | relative(page) }}" alt="Parallax Image" class="sliding-item">
           <div class="red-btn">FANZAで本編を見る</div>
         </a>
       </div>

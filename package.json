@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "eleventy --serve --output=_site_web",
+    "start": "ELEVENTY_IMG_PHASE=3 eleventy --serve --output=_site_web",
     "build": "npm run build:web",
-    "build:local": "set IS_LOCAL=true&& eleventy --output=_site_local",
-    "build:web": "eleventy --output=_site_web"
+    "build:local": "set IS_LOCAL=true&& ELEVENTY_IMG_PHASE=3 eleventy --output=_site_local",
+    "build:web": "ELEVENTY_IMG_PHASE=3 eleventy --output=_site_web"
   },
   "dependencies": {
     "slugify": "^1.6.6",
@@ -16,6 +16,7 @@
     "unidecode": "^1.1.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-img": "^6.0.4"
   }
 }

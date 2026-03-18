@@ -1,5 +1,9 @@
 ﻿﻿// .eleventy.js
 
+const fs = require("fs");
+const path = require("path");
+const Image = require("@11ty/eleventy-img");
+
 module.exports = function(eleventyConfig) {
   // 1. 環境変数の設定 (開発か本番か)
   const isProduction = process.env.NODE_ENV === 'production';
@@ -8,8 +12,67 @@ module.exports = function(eleventyConfig) {
   // 公開ターゲット (local / web)
   const isLocal = process.env.IS_LOCAL === 'true';
   const publishTarget = isLocal ? "local" : "web";
+  const eleventyImgPhase = Number.parseInt(process.env.ELEVENTY_IMG_PHASE || "1", 10);
+  const imageBuildOutputDir = isLocal ? "_site_local" : "_site_web";
+
+  const phaseByImageCategory = {
+    main: 1,
+    thumb: 2,
+    banner: 3,
+    scene: 3
+  };
+
+  const shouldConvertToWebp = (category) => {
+    const requiredPhase = phaseByImageCategory[category] || Number.POSITIVE_INFINITY;
+    return eleventyImgPhase >= requiredPhase;
+  };
+
+  const normalizeImagePath = (src) => {
+    return src.replace(/^[./]+/, "").replace(/\\/g, "/").replace(/\/+/g, "/");
+  };
+
+  eleventyConfig.addNunjucksAsyncFilter("toWebp", async (src, category = "main", callback) => {
+    try {
+      if (typeof src !== "string" || src.length === 0 || !shouldConvertToWebp(category)) {
+        callback(null, src);
+        return;
+      }
+
+      const normalizedSrc = normalizeImagePath(src);
+      const inputPath = path.join(process.cwd(), "src", normalizedSrc);
+
+      if (!fs.existsSync(inputPath)) {
+        callback(null, src);
+        return;
+      }
+
+      const metadata = await Image(inputPath, {
+        widths: [null],
+        formats: ["webp"],
+        outputDir: path.join(process.cwd(), imageBuildOutputDir, "images/optimized"),
+        urlPath: "/images/optimized/",
+        sharpWebpOptions: {
+          quality: 65,
+          effort: 6
+        }
+      });
+
+      const webp = metadata.webp && metadata.webp[0];
+      if (!webp || !webp.url) {
+        callback(null, src);
+        return;
+      }
+
+      callback(null, webp.url.replace(/^\//, ""));
+    } catch (error) {
+      console.warn(`[toWebp] Failed to convert image: ${src}`);
+      callback(null, src);
+    }
+  });
+
   eleventyConfig.addGlobalData("isLocal", isLocal);
   eleventyConfig.addGlobalData("publishTarget", publishTarget);
+  eleventyConfig.addGlobalData("eleventyImgPhase", eleventyImgPhase);
 
   // public 未指定時は draft を後方互換として扱う
   const isVisibleForTarget = (data, target = publishTarget) => {
