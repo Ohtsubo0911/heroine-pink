@@ -52,7 +52,7 @@ tags:
 
 # images/XXXX-XX_ヒロイン名_Heroine.jpg を推奨
 # 例: keyvisual: "images/SPSE-69_Cosplayder_Heroine.jpg"
-keyvisual: "images/SPSE-69_Cosplayder_Heroine.jpg"
+keyvisual: "images/{{ work_code }}/{{ work_code }}_Cosplayder_Heroine.jpg"
 
 # 単色例: "rgb(250, 20, 20)"
 # 二色例: "linear-gradient(135deg, #f0bc68 50%, #c4d7d1 50%)"
@@ -60,7 +60,7 @@ keycolor: "rgb(250, 20, 20)"
 
 # バナー画像のパスを指定
 # 例: bannervisual: "images/SPSE-76/SPSE-76_L.jpg"
-bannervisual: "images/SPSE-76/SPSE-76_L.jpg"
+bannervisual: "images/{{ work_code }}/{{ work_code }}_L.jpg"
 
 # バナーのリンク先を指定
 affiliate_url: "https://www.yahoo.co.jp/"
@@ -196,5 +196,19 @@ review:
           text: "総括"
         - speaker: "madame"
           text: "官能的結語"
+
+
+# =========================================================
+# ■ SEE ALSO（関連ページ）
+# url: 作品ページのパス（例: "/SPSE-69/"）
+# img: サムネイル画像のパス（例: "images/SPSE-69/SPSE-69_Heroine.jpg"）
+# =========================================================
+
+see_also:
+  - url: "/XXXX-XX/"
+    img: "images/XXXX-XX/XXXX-XX_Heroine.jpg"
+  - url: "/YYYY-YY/"
+    img: "images/YYYY-YY/YYYY-YY_Heroine.jpg"
+
 
 ---
