@@ -34,9 +34,9 @@ tags:
 # ■ ビジュアル設定
 # =========================================================
 
-keyvisual: "images/THZ-79/THZ-79_Blue-Fenril_Heroine.jpg"
+keyvisual: "images/{{ work_code }}/{{ work_code }}_Blue-Fenril_Heroine.jpg"
 keycolor: "rgb(40, 180, 230)"
-bannervisual: "images//THZ-79//THZ-79_L.jpg"
+bannervisual: "images/{{ work_code }}/{{ work_code }}_L.jpg"
 
 # バナーのリンク先を指定
 affiliate_url: "https://www.yahoo.co.jp/"
