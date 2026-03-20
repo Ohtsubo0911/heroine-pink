@@ -34,7 +34,7 @@ tags:
 # ■ ビジュアル設定
 # =========================================================
 
-keyvisual: "images/THZ-79/THZ-79_Blue-Fenrir_Heroine.jpg"
+keyvisual: "images/THZ-79/THZ-79_Blue-Fenril_Heroine.jpg"
 keycolor: "rgb(40, 180, 230)"
 bannervisual: "images//THZ-79//THZ-79_L.jpg"
 
@@ -177,19 +177,19 @@ see_also:
   - url: "/GHLS-70/"
     img: "images/GHLS-70/GHLS-70_Red-Phoenix_White-Unicorn_Blue-Fenril_Heroines.jpg"
   - url: "/THZ-79/"
-    img: "images/THZ-79/THZ-79_Blue-Fenrir_Heroine.jpg"
+    img: "images/THZ-79/THZ-79_Blue-Fenril_Heroine.jpg"
   - url: "/GHMT-23/"
     img: "images/GHMT-23/GHMT-23_White-Unicorn_Heroine.jpg"
   - url: "/GHMT-45/"
     img: "images/GHMT-45/GHMT-45_Blue-Fenril_Heroine.jpg"
   - url: "/TBB-97/"
-    img: "images/TBB-97/TBB-97_Blue-Fenrir_Heroine.jpg"
+    img: "images/TBB-97/TBB-97_Blue-Fenril_Heroine.jpg"
   - url: "/DHRY-17/"
     img: "images/DHRY-17/DHRY-17_Blue-Fenril_Heroine.jpg"
   - url: "/GHOV-36/"
-    img: "images/GHOV-36/GHOV-36_Red-Phoenix_White-Unicorn_Blue-Fenrir_Heroines.jpg"
+    img: "images/GHOV-36/GHOV-36_Red-Phoenix_White-Unicorn_Blue-Fenril_Heroines.jpg"
   - url: "/GHOV-41/"
-    img: "images/GHOV-41/GHOV-41_Red-Phoenix_White-Unicorn_Blue-Fenrir_Heroines.jpg"
+    img: "images/GHOV-41/GHOV-41_Red-Phoenix_White-Unicorn_Blue-Fenril_Heroines.jpg"
   - url: "/STHP-02/"
     img: "images/STHP-02/STHP-02_Red-Phoenix_Heroine.jpg"
   - url: "/GHOV-93/"

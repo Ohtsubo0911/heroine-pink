@@ -34,7 +34,7 @@ tags:
 # ■ ビジュアル設定
 # =========================================================
 
-keyvisual: "images/GHOV-36/GHOV-36_Red-Phoenix_White-Unicorn_Blue-Fenrir_Heroines.jpg"
+keyvisual: "images/GHOV-36/GHOV-36_Red-Phoenix_White-Unicorn_Blue-Fenril_Heroines.jpg"
 keycolor: "linear-gradient(135deg, rgb(230, 230, 230) 35%, rgb(240, 60, 60) 35%, rgb(240, 60, 60) 65%, rgb(40, 180, 230) 65%)"
 bannervisual: "images/GHOV-36/GHOV-36_L.jpg"
 

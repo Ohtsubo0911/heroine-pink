@@ -34,7 +34,7 @@ tags:
 # ■ ビジュアル設定
 # =========================================================
 
-keyvisual: "images/TBB-97/TBB-97_Blue-Fenrir_Heroine.jpg"
+keyvisual: "images/TBB-97/TBB-97_Blue-Fenril_Heroine.jpg"
 keycolor: "rgb(40, 180, 230)"
 bannervisual: "images/TBB-97/TBB-97_L.jpg"
 
