@@ -160,6 +160,7 @@
         <li><a href="#scenes"><img src="{{ ('/images/icon_scenes.svg') | relative(page) }}"><br />SCENES</a></li>
         <li><a href="#data"><img src="{{ ('/images/icon_data.svg') | relative(page) }}"><br />DATA</a></li>
         <li><a href="#review"><img src="{{ ('/images/icon_review.svg') | relative(page) }}"><br />REVIEW</a></li>
+        <li><a href="#see-also"><img src="{{ ('/images/icon_see-also.svg') | relative(page) }}"><br />SEE ALSO</a></li>
       </ul>
     </div>
 
@@ -202,7 +203,7 @@
 
         {% set image_scenes = scenes_img or [] %}
         {% for scene in image_scenes %}
-        {% set current_img_src = scene.img or scene.img_src or default_img_src %}
+        {% set current_img_src = (scene.img or scene.img_src or default_img_src) | replace('{{ work_code }}', work_code) %}
 
         <div class="scenes-detail">
           <div class="top">
@@ -227,7 +228,7 @@
     <div class="scroll-container" id="parallax-section">
       <div class="sticky-wrapper">
         <a href="{{ affiliate_url }}" target="_blank" rel="noopener noreferrer">
-          <img src="{{ bannervisual | toWebp('banner') | relative(page) }}" alt="Parallax Image" class="sliding-item reverse">
+          <img src="{{ bannervisual | toWebp('banner') | relative(page) }}" alt="Parallax Image" class="sliding-item">
           <div class="red-btn">FANZAで本編を見る</div>
         </a>
       </div>
@@ -308,7 +309,7 @@
   <div class="scroll-container" id="parallax-section">
     <div class="sticky-wrapper">
       <a href="{{ affiliate_url }}" target="_blank" rel="noopener noreferrer">
-        <img src="{% if page.data | isPublic(publishTarget) %}{{ bannervisual | toWebp('banner') | relative(page) }}{% else %}{{ bannervisual | relative(page) }}{% endif %}" alt="Parallax Image" class="sliding-item">
+        <img src="{% if page.data | isPublic(publishTarget) %}{{ bannervisual | toWebp('banner') | relative(page) }}{% else %}{{ bannervisual | relative(page) }}{% endif %}" alt="Parallax Image" class="sliding-item reverse">
         <div class="red-btn">FANZAで本編を見る</div>
       </a>
     </div>

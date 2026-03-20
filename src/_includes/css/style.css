@@ -120,7 +120,7 @@ nav#breadcrumb ol li a img {
 }
 
 #agenda{
-  margin-bottom: 4vmin;
+  margin-bottom: 0;
 }
 
 #lead {
@@ -184,7 +184,9 @@ nav#breadcrumb ol li a img {
 }
 
 #agenda ul {
-  margin-bottom: 0.8em;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-bottom: 0.5em;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -193,13 +195,20 @@ nav#breadcrumb ol li a img {
 }
 
 #agenda li {
-  display: block;
-  float: left;
-  width: 50%;
+  grid-column: span 2;
   text-align: center;
   font-size: 2em;
   line-height: 0.8em;
   margin-bottom: 0.8em;
+}
+
+/* 3列レイアウトで最後の行が2要素のときだけ中央寄せ */
+#agenda li:nth-last-child(2):nth-child(3n+1) {
+  grid-column: 2 / span 2;
+}
+
+#agenda li:last-child:nth-child(3n+2) {
+  grid-column: 4 / span 2;
 }
 
 #scenes #play a:link,

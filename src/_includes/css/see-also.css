@@ -12,41 +12,99 @@
   }
 
   #see-also ul {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 12px;
-    margin: 0;
     padding: 0;
     max-width: 960px;
-    margin: auto;
+    margin: 0 auto;
     list-style: none;
     line-height: 0;
   }
 
   #see-also li {
     min-width: 0;
+    flex: 0 0 calc((100% - 24px) / 3); /* 3列: gap×2=24px */
   }
 
   #see-also li a img {
     width: 100%;
   }
 
-  
+/* 3列 (〜767px): 最後の行が1つだけの場合、前の行から1つ持ってきて2つにする */
+/* さらに前の行（も2つになる）も50%幅にして揃える */
+@media screen and (max-width: 767px) {
 
-/* 画面幅が768px以上（タブレット・PC）で適用 */
-@media screen and (min-width: 768px) {
-
-  #see-also ul {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+  #see-also li:last-child:nth-child(3n+1),      /* 孤立していた最後のアイテム */
+  #see-also li:nth-last-child(2):nth-child(3n), /* 最後の行に押し出されるアイテム */
+  #see-also li:nth-last-child(3):nth-child(3n+2), /* 2つ前の行・後ろ側 */
+  #see-also li:nth-last-child(4):nth-child(3n+1) { /* 2つ前の行・前側 */
+    flex: 0 0 calc(50% - 6px);
   }
-  
+
 }
 
-/* 画面幅が1200px以上（大きなPC）で適用 */
+/* 6列 (768px〜1199px) */
+@media screen and (min-width: 768px) {
+
+  #see-also li {
+    flex: 0 0 calc((100% - 60px) / 6); /* 6列: gap×5=60px */
+  }
+
+}
+
+/* 6列 (768px〜1199px): 最後の行が1つだけの場合、前の行から2つ持ってきて3つにする */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+  #see-also li:last-child:nth-child(6n+1),        /* 孤立していた最後のアイテム */
+  #see-also li:nth-last-child(2):nth-child(6n),   /* 前の行から持ってくる1つ目 */
+  #see-also li:nth-last-child(3):nth-child(6n+5) { /* 前の行から持ってくる2つ目 */
+    flex: 0 0 calc((100% - 36px) / 4); /* 3つ並べる: gap×2=24px */
+  }
+
+  /* 4つ残る行を25%幅に揃える */
+  #see-also li:nth-last-child(4):nth-child(6n+4),
+  #see-also li:nth-last-child(5):nth-child(6n+3),
+  #see-also li:nth-last-child(6):nth-child(6n+2),
+  #see-also li:nth-last-child(7):nth-child(6n+1) {
+    flex: 0 0 calc((100% - 36px) / 4); /* 4つ並べる: gap×3=36px */
+  }
+
+}
+
+/* 8列 (1200px〜) */
 @media screen and (min-width: 1200px) {
 
-  #see-also ul {
-    grid-template-columns: repeat(9, minmax(0, 1fr));
+  #see-also li {
+    flex: 0 0 calc((100% - 84px) / 8); /* 8列: gap×7=84px */
+  }
+
+  /* 8列: 最後の行が1つだけの場合、前の行から3つ移して 5 + 4 にする */
+  #see-also li:last-child:nth-child(8n+1),
+  #see-also li:nth-last-child(2):nth-child(8n),
+  #see-also li:nth-last-child(3):nth-child(8n+7),
+  #see-also li:nth-last-child(4):nth-child(8n+6),
+  #see-also li:nth-last-child(5):nth-child(8n+5),
+  #see-also li:nth-last-child(6):nth-child(8n+4),
+  #see-also li:nth-last-child(7):nth-child(8n+3),
+  #see-also li:nth-last-child(8):nth-child(8n+2),
+  #see-also li:nth-last-child(9):nth-child(8n+1) {
+    flex: 0 0 calc((100% - 48px) / 5); /* 20%基準: gap×4=48px */
+  }
+
+  /* 8列: 最後の行が2つだけの場合、前の行から2つ移して 6 + 4 にする */
+  #see-also li:last-child:nth-child(8n+2),
+  #see-also li:nth-last-child(2):nth-child(8n+1),
+  #see-also li:nth-last-child(3):nth-child(8n),
+  #see-also li:nth-last-child(4):nth-child(8n+7),
+  #see-also li:nth-last-child(5):nth-child(8n+6),
+  #see-also li:nth-last-child(6):nth-child(8n+5),
+  #see-also li:nth-last-child(7):nth-child(8n+4),
+  #see-also li:nth-last-child(8):nth-child(8n+3),
+  #see-also li:nth-last-child(9):nth-child(8n+2),
+  #see-also li:nth-last-child(10):nth-child(8n+1) {
+    flex: 0 0 calc((100% - 60px) / 6); /* 16.6%基準: gap×5=60px */
   }
 
 }

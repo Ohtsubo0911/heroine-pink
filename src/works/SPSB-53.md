@@ -35,7 +35,7 @@ tags:
 # =========================================================
 
 keyvisual: "images/SPSB-53_Ryusei-Blue_Ryusei-Pink_Heroine.jpg"
-keycolor: "linear-gradient(135deg, #4cbaff 50%, #ff71d9 50%)"
+keycolor: "linear-gradient(135deg, #35cff6 50%, #f56ac7 50%)"
 
 
 # =========================================================
