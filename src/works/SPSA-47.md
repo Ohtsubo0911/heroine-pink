@@ -34,7 +34,7 @@ tags:
 # ■ ビジュアル設定
 # =========================================================
 
-keyvisual: "images/SPSA-47_Vallnarga_Heroine.jpg"
+keyvisual: "images/{{ work_code }}/SPSA-47_Vallnarga_Heroine.jpg"
 keycolor: "rgb(124, 113, 246)"
 bannervisual: "images/SPSA-47/SPSA-47_L.jpg"
 

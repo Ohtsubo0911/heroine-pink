@@ -34,7 +34,7 @@ tags:
 # ■ ビジュアル設定
 # =========================================================
 
-keyvisual: "images/GHMT-45/GHMT-45_Blue-Fenrir_Heroine.jpg"
+keyvisual: "images/GHMT-45/GHMT-45_Blue-Fenril_Heroine.jpg"
 keycolor: "rgb(40, 180, 230)"
 bannervisual: "images/GHMT-45/GHMT-45_L.jpg"
 

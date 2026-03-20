@@ -110,7 +110,8 @@ nav#breadcrumb ol li a img {
 #agenda,
 #lead,
 #scenes,
-#data {
+#data,
+#see-also {
   font-family: "WDXL Lubrifont JP N", sans-serif;
   margin: 3vmin auto 1vmin auto;
   padding: 1em;
@@ -138,7 +139,8 @@ nav#breadcrumb ol li a img {
 #lead h2,
 #scenes h2,
 #data h2,
-#review h2 {
+#review h2,
+#see-also h2 {
   font-size: 3em;
   margin-top: 0.5em;
   margin-bottom: 1em;
@@ -149,7 +151,8 @@ nav#breadcrumb ol li a img {
 #lead h2 img,
 #scenes h2 img,
 #data h2 img,
-#review h2 img{
+#review h2 img,
+#see-also h2 img{
   width: 1.8em;
 }
 

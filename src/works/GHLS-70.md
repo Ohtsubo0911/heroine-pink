@@ -35,7 +35,7 @@ tags:
 # ■ ビジュアル設定
 # =========================================================
 
-keyvisual: "images/GHLS-70/GHLS-70_Red-Phoenix_White-Unicorn_Blue-Fenrir_Heroines.jpg"
+keyvisual: "images/GHLS-70/GHLS-70_Red-Phoenix_White-Unicorn_Blue-Fenril_Heroines.jpg"
 keycolor: "linear-gradient(135deg, rgb(230, 230, 230) 35%, rgb(240, 60, 60) 35%, rgb(240, 60, 60) 65%, rgb(40, 180, 230) 65%)"
 bannervisual:
 affiliate_url:
