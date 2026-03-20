@@ -1,5 +1,7 @@
-"scripts": {
-  "start": "eleventy --serve",
-  "build:local": "$env:IS_LOCAL='true'; eleventy",
-  "build:web": "eleventy"
+{
+  "scripts": {
+    "start": "eleventy --serve",
+    "build:local": "$env:IS_LOCAL='true'; eleventy",
+    "build:web": "eleventy"
+  }
 }

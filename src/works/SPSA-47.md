@@ -34,9 +34,9 @@ tags:
 # ■ ビジュアル設定
 # =========================================================
 
-keyvisual: "images/{{ work_code }}/SPSA-47_Vallnarga_Heroine.jpg"
+keyvisual: "images/{{ work_code }}/{{ work_code }}_Vallnarga_Heroine.jpg"
 keycolor: "rgb(124, 113, 246)"
-bannervisual: "images/SPSA-47/SPSA-47_L.jpg"
+bannervisual: "images/{{ work_code }}/{{ work_code }}_L.jpg"
 
 # バナーのリンク先を指定
 affiliate_url: "https://www.yahoo.co.jp/"
