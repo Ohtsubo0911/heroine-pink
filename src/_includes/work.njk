@@ -81,6 +81,9 @@
     {% if bannervisual %}
     <link rel="stylesheet" href="{{ '/css/parallax-banner.css' | url }}">
     {% endif %}
+    {% if see_also %}
+    <link rel="stylesheet" href="{{ '/css/see-also.css' | url }}">
+    {% endif %}
     
   {% endif %}
 
@@ -284,7 +287,23 @@
 
     </section>
 
+    {% if see_also and see_also.length > 0 %}
+    <section id="see-also" class="clearfix" >
+
+      <h2><img src="{{ ('/images/icon_see-also.svg') | relative(page) }}"><br />SEE ALSO</h2>
+        <ul>
+          {% for item in see_also %}
+          <li><a href="{{ item.url | relative(page) }}">
+            <img src="{% if page.data | isPublic(publishTarget) %}{{ item.img | toWebp('main') | relative(page) }}{% else %}{{ item.img | relative(page) }}{% endif %}" />
+          </a></li>
+          {% endfor %}
+        </ul>
+
+    </section>
+    {% endif %}
+
   </main>
+
 
   {% if not isLocal and bannervisual %}
   <div class="scroll-container" id="parallax-section">
@@ -295,21 +314,6 @@
       </a>
     </div>
   </div>
-  {% endif %}
-
-  {% if see_also and see_also.length > 0 %}
-  <section class="see-also">
-
-    <h2><img src="{{ ('/images/icon_see-also.svg') | relative(page) }}"><br />SEE ALSO</h2>
-      <ul>
-        {% for item in see_also %}
-        <li><a href="{{ item.url | relative(page) }}">
-          <img src="{% if page.data | isPublic(publishTarget) %}{{ item.img | toWebp('main') | relative(page) }}{% else %}{{ item.img | relative(page) }}{% endif %}" />
-        </a></li>
-        {% endfor %}
-      </ul>
-
-  </section>
   {% endif %}
 
   {% include "backtotop.njk" %}

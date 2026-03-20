@@ -1,0 +1,52 @@
+﻿@charset "utf-8";
+
+  #see-also {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 3vmin;
+  }
+
+  #see-also h2 img {
+    filter: invert(92%) sepia(91%) saturate(40%) hue-rotate(218deg) brightness(108%) contrast(100%);
+  }
+
+  #see-also ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    max-width: 960px;
+    margin: auto;
+    list-style: none;
+    line-height: 0;
+  }
+
+  #see-also li {
+    min-width: 0;
+  }
+
+  #see-also li a img {
+    width: 100%;
+  }
+
+  
+
+/* 画面幅が768px以上（タブレット・PC）で適用 */
+@media screen and (min-width: 768px) {
+
+  #see-also ul {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  
+}
+
+/* 画面幅が1200px以上（大きなPC）で適用 */
+@media screen and (min-width: 1200px) {
+
+  #see-also ul {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+}

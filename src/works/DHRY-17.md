@@ -34,7 +34,7 @@ tags:
 # ■ ビジュアル設定
 # =========================================================
 
-keyvisual: "images/DHRY-17/DHRY-17_Blue-Fenrir_Heroine.jpg"
+keyvisual: "images/DHRY-17/DHRY-17_Blue-Fenril_Heroine.jpg"
 keycolor: "rgb(40, 180, 230)"
 bannervisual: "images/DHRY-17/DHRY-17_L.jpg"
 
