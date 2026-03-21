@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const Image = require("@11ty/eleventy-img");
+const MarkdownIt = require("markdown-it");
 
 module.exports = function(eleventyConfig) {
   // 1. 環境変数の設定 (開発か本番か)
@@ -21,6 +22,12 @@ module.exports = function(eleventyConfig) {
     banner: 3,
     scene: 3
   };
+
+  const reviewMarkdown = new MarkdownIt({
+    html: true,
+    breaks: true,
+    linkify: true
+  });
 
   const shouldConvertToWebp = (category) => {
     const requiredPhase = phaseByImageCategory[category] || Number.POSITIVE_INFINITY;
@@ -136,6 +143,14 @@ module.exports = function(eleventyConfig) {
     const directorsData = require("./src/_data/directorsData.json");
     const director = directorsData.find(d => d.name === name);
     return director ? director.slug : null;
+  });
+
+  eleventyConfig.addFilter("renderReviewText", (text) => {
+    if (typeof text !== "string" || text.length === 0) {
+      return "";
+    }
+
+    return reviewMarkdown.renderInline(text);
   });
 
   // 5. 作品コレクション (public で公開範囲を制御)

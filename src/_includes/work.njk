@@ -282,7 +282,7 @@
       {% set speaker_position = review.reviewers[speaker_id].position %}
 
       <i class="{{ speaker_id }} {{ speaker_position }} icon named"></i>
-      <p>{{ chat.text | safe }}</p>
+      <p>{{ chat.text | renderReviewText | safe }}</p>
       {% endfor %}
       {% endfor %}
 
