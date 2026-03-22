@@ -121,27 +121,114 @@ scenes:
 
 scenes_img:
   -
+    img: "images/{{ work_code }}/{{ work_code }}_01.jpg"
+    top:
+      - { type: "S", align: "C", tail: "L", text: "お前は！ ユゴースの怪人！" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_02.jpg"
+    top:
+      - { type: "S", align: "R", tail: "C", text: "く・・・くるしい・・・" }
+    bottom:
+      - { type: "S", align: "L", tail: "L", text: "ギョギョギョギョギョ" }
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_03.jpg"
+    top:
+      - { type: "S", align: "L", tail: "C", text: "もっと苦しめ ブルーフェンリル" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_04.jpg"
+    top:
+      - { type: "S", align: "C", tail: "C", text: "あなたは！ユゴースの幹部プラシオン！" }
+    bottom: []
+  -
     img: "images/{{ work_code }}/{{ work_code }}_05.jpg"
     top:
-      - { type: "S", align: "L", tail: "R", text: "【画像シーン】拘束直後の表情変化を確認" }
-    bottom: []
+      - { type: "S", align: "L", tail: "L", text: "これは欲しくないのかな？" }
+    bottom:
+      - { type: "S", align: "C", tail: "C", text: "それは！解毒剤！？" }
 
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_06.jpg"
+    top:
+      []
+    bottom:
+      - { type: "T", align: "C", tail: "C", text: "なんて力なの・・・<br>　身体の力が全部抜けてく・・・" }
   -
     img: "images/{{ work_code }}/{{ work_code }}_07.jpg"
     top:
-      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+      - { type: "S", align: "C", tail: "C", text: "あっ！ あぁっ！！" }
     bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_08.jpg"
+    top:
+      - { type: "S", align: "C", tail: "C", text: "あぁっ！ とめてっ！！" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_09.jpg"
+    top:
+      - { type: "S", align: "L", tail: "C", text: "何をするの！？ やめて！！" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_10.jpg"
+    top:
+      []
+    bottom:
+      - { type: "T", align: "L", tail: "C", text: "ここで敗けるわけにはいかない<br>　敗けるものですか" }
 
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_11.jpg"
+    top:
+      - { type: "S", align: "L", tail: "C", text: "ハァ ハァ ハァ" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_12.jpg"
+    top:
+      - { type: "S", align: "C", tail: "L", text: "きょ・・・強化スーツがっ！！" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_13.jpg"
+    top:
+      - { type: "S", align: "C", tail: "L", text: "ハァ ハァ ハァ" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_14.jpg"
+    top:
+      - { type: "S", align: "R", tail: "R", text: "もう諦めたらどうだギョ？" }
+    bottom:
+      - { type: "T", align: "C", tail: "L", text: "痛い・・・苦しい・・・<br>　身体がもう動かない・・・" }
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_15.jpg"
+    top:
+      []
+    bottom:
+      - { type: "S", align: "R", tail: "R", text: "失禁ギョか？" }
+
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_16.jpg"
+    top:
+      []
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_17.jpg"
+    top:
+      - { type: "S", align: "C", tail: "C", text: "あぁピラノイア様<br>もっと！もっとおっぱい吸って！" }
+    bottom:
+      - { type: "S", align: "C", tail: "C", text: "ピラノイア様<br>あぁ またイっちゃう！" }
   -
     img: "images/{{ work_code }}/{{ work_code }}_18.jpg"
     top:
-      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+      - { type: "S", align: "L", tail: "C", text: "あぁぁぁ！！" }
     bottom: []
-
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_19.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "フェニックス ユニコーン 待ってて<br>必ず解毒剤を手に入れてみせるから" }
+    bottom: []
   -
     img: "images/{{ work_code }}/{{ work_code }}_20.jpg"
     top:
-      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+      - { type: "T", align: "R", tail: "C", text: "フェニックス ユニコーン 助けて" }
     bottom: []
     
     

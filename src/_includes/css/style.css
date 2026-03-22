@@ -185,7 +185,6 @@ nav#breadcrumb ol li a img {
 
 #agenda ul {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
   margin-bottom: 0.5em;
   margin-left: auto;
   margin-right: auto;
@@ -195,20 +194,51 @@ nav#breadcrumb ol li a img {
 }
 
 #agenda li {
-  grid-column: span 2;
   text-align: center;
   font-size: 2em;
   line-height: 0.8em;
   margin-bottom: 0.8em;
 }
 
-/* 3列レイアウトで最後の行が2要素のときだけ中央寄せ */
-#agenda li:nth-last-child(2):nth-child(3n+1) {
-  grid-column: 2 / span 2;
+/* 4要素: 2列x2行 */
+#agenda ul.agenda-count-4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-#agenda li:last-child:nth-child(3n+2) {
-  grid-column: 4 / span 2;
+#agenda ul.agenda-count-4 li {
+  grid-column: span 1;
+}
+
+#agenda ul.agenda-count-4 li:nth-child(1),
+#agenda ul.agenda-count-4 li:nth-child(3) {
+  margin-left: 20%;
+}
+
+#agenda ul.agenda-count-4 li:nth-child(2),
+#agenda ul.agenda-count-4 li:nth-child(4) {
+  margin-right: 20%;
+}
+
+/* 5要素: 1行目3列 + 2行目2列(50%ずつ) */
+#agenda ul.agenda-count-5 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+#agenda ul.agenda-count-5 li {
+  grid-column: span 2;
+}
+
+#agenda ul.agenda-count-5 li:nth-child(4),
+#agenda ul.agenda-count-5 li:nth-child(5) {
+  grid-column: span 3;
+}
+
+#agenda ul.agenda-count-5 li:nth-child(4) {
+  margin-left: 20%;
+}
+
+#agenda ul.agenda-count-5 li:nth-child(5) {
+  margin-right: 20%;
 }
 
 #scenes #play a:link,

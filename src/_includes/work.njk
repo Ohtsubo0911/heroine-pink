@@ -112,6 +112,16 @@
   
 
   <main>
+      {% set image_scenes = scenes_img or [] %}
+      {% set has_image_scenes = false %}
+      {% if not isLocal %}
+        {% for scene in image_scenes %}
+          {% if scene.img or scene.img_src %}
+            {% set has_image_scenes = true %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
     <div id="title" style="background: {{keycolor}};">
       <h1>{{ title }}</h1>
     </div>
@@ -154,10 +164,13 @@
      src="{{ keyvisual | toWebp('main') | relative(page) }}"
      alt="{{ title }} {% for name in actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ release_date }}" />
 
+    {% set agenda_count = 5 if (isLocal or has_image_scenes) else 4 %}
     <div id="agenda">
-      <ul class="clearfix">
+      <ul class="clearfix agenda-count-{{ agenda_count }}">
         <li><a href="#story"><img src="{{ ('/images/icon_story.svg') | relative(page) }}"><br />STORY</a></li>
+        {% if isLocal or has_image_scenes %}
         <li><a href="#scenes"><img src="{{ ('/images/icon_scenes.svg') | relative(page) }}"><br />SCENES</a></li>
+        {% endif %}
         <li><a href="#data"><img src="{{ ('/images/icon_data.svg') | relative(page) }}"><br />DATA</a></li>
         <li><a href="#review"><img src="{{ ('/images/icon_review.svg') | relative(page) }}"><br />REVIEW</a></li>
         <li><a href="#see-also"><img src="{{ ('/images/icon_see-also.svg') | relative(page) }}"><br />SEE ALSO</a></li>
@@ -198,11 +211,12 @@
         {% endfor %}
       </section>
     {% else %}
+      {% if has_image_scenes %}
       <section id="scenes" class="image-scenes">
         <h2><img src="{{ ('/images/icon_scenes.svg') | relative(page) }}"><br />SCENES</h2>
 
-        {% set image_scenes = scenes_img or [] %}
         {% for scene in image_scenes %}
+        {% if scene.img or scene.img_src %}
         {% set current_img_src = (scene.img or scene.img_src or default_img_src) | replace('{{ work_code }}', work_code) %}
 
         <div class="scenes-detail">
@@ -220,8 +234,10 @@
             {% endfor %}
           </div>
         </div>
+        {% endif %}
         {% endfor %}
       </section>
+      {% endif %}
     {% endif %}
 
     {% if not isLocal and bannervisual %}

@@ -118,15 +118,9 @@ scenes:
 
 scenes_img:
   -
-    img: "images/SPSB-09/SPSB-09_01.jpg"
+    img:
     top:
       - { type: "S", align: "L", tail: "R", text: "【画像シーン】拘束直後の表情変化を確認" }
-    bottom: []
-
-  -
-    img: "images/SPSB-09/SPSB-09_02.jpg"
-    top:
-      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
     bottom: []
     
     
