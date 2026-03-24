@@ -97,10 +97,10 @@ story_lead: |
 
 scenes:
   -
-    start: "00:00:10"
+    start: "00:02:07"
     end: "00:00:20"
     top:
-      - { type: "S", align: "L", tail: "R", text: "解説テキスト" }
+      - { type: "S", align: "L", tail: "R", text: "追い詰めたわよモンズマン<br>あなたたちはこのレジェンミラーが倒してあげるわ" }
     bottom: []
 
   -

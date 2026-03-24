@@ -115,13 +115,105 @@ scenes:
 
 scenes_img:
   -
-    img: "images/SPSB-09/SPSB-09_01.jpg"
+    img: "images/{{ work_code }}/{{ work_code }}_01.jpg"
     top:
       - { type: "S", align: "L", tail: "R", text: "【画像シーン】拘束直後の表情変化を確認" }
     bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_02.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_03.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_04.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_05.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
 
   -
-    img: "images/SPSB-09/SPSB-09_02.jpg"
+    img: "images/{{ work_code }}/{{ work_code }}_06.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_07.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_08.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_09.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_10.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_11.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_12.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_13.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_14.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_15.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_16.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_17.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_18.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_19.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_20.jpg"
     top:
       - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
     bottom: []
