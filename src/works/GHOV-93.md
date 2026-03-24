@@ -121,13 +121,105 @@ scenes:
 
 scenes_img:
   -
-    img: "images/SPSB-09/SPSB-09_01.jpg"
+    img: "images/{{ work_code }}/{{ work_code }}_01.jpg"
     top:
       - { type: "S", align: "L", tail: "R", text: "【画像シーン】拘束直後の表情変化を確認" }
     bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_02.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_03.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_04.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_05.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
 
   -
-    img: "images/SPSB-09/SPSB-09_02.jpg"
+    img: "images/{{ work_code }}/{{ work_code }}_06.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_07.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_08.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_09.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_10.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_11.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_12.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_13.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_14.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_15.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_16.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_17.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_18.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_19.jpg"
+    top:
+      - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
+    bottom: []
+  -
+    img: "images/{{ work_code }}/{{ work_code }}_20.jpg"
     top:
       - { type: "T", align: "C", tail: "C", text: "【画像シーン】視線の落ち方と受動姿勢が強い" }
     bottom: []
@@ -165,5 +257,36 @@ review:
           text: "総括"
         - speaker: "madame"
           text: "官能的結語"
+
+
+# =========================================================
+# ■ SEE ALSO（関連ページ）
+# url: 作品ページのパス（例: "/SPSE-69/"）
+# img: サムネイル画像のパス（例: "images/SPSE-69/SPSE-69_Heroine.jpg"）
+# =========================================================
+
+see_also:
+  - url: "/GHLS-70/"
+    img: "images/GHLS-70/GHLS-70_Red-Phoenix_White-Unicorn_Blue-Fenril_Heroines.jpg"
+  - url: "/THZ-79/"
+    img: "images/THZ-79/THZ-79_Blue-Fenril_Heroine.jpg"
+  - url: "/GHMT-23/"
+    img: "images/GHMT-23/GHMT-23_White-Unicorn_Heroine.jpg"
+  - url: "/GHMT-45/"
+    img: "images/GHMT-45/GHMT-45_Blue-Fenril_Heroine.jpg"
+  - url: "/TBB-97/"
+    img: "images/TBB-97/TBB-97_Blue-Fenril_Heroine.jpg"
+  - url: "/DHRY-17/"
+    img: "images/DHRY-17/DHRY-17_Blue-Fenril_Heroine.jpg"
+  - url: "/GHOV-36/"
+    img: "images/GHOV-36/GHOV-36_Red-Phoenix_White-Unicorn_Blue-Fenril_Heroines.jpg"
+  - url: "/GHOV-41/"
+    img: "images/GHOV-41/GHOV-41_Red-Phoenix_White-Unicorn_Blue-Fenril_Heroines.jpg"
+  - url: "/STHP-02/"
+    img: "images/STHP-02/STHP-02_Red-Phoenix_Heroine.jpg"
+  #- url: "/GHOV-93/"
+  #  img: "images/GHOV-93/GHOV-93_White-Unicorn_Heroine.jpg"
+  - url: "/SPSA-47/"
+    img: "images/SPSA-47/SPSA-47_Vallnarga_Heroine.jpg"
 
 ---
