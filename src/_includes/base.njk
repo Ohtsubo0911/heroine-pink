@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
   <title>{{ title }}</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +34,11 @@
 <body>
   <header>
     <div id="home">
-      <h1><a href="{{ ('/') | relative(page) }}"><span class="title">HEROINE PINK</span><br>
+      <h1><a href="{{ ('/') | relative(page) }}">
+
+      <img src="{{ ('/images/logo.svg') | relative(page) }}" alt="" style="height:1.8em; float:left; margin-right:0.12em; filter: invert(1) brightness(0.2);" />
+      
+      <span class="title">HEROINE PINK</span><br>
           <span class="tagline">対ヒロイン研究分析機関</span></a></h1>
     </div>
 

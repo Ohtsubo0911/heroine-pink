@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml" />
   <title>{{ title }} {{actress}}｜魔法少女・セーラー・レンジャー・アメコミ・バトルスーツ・特撮ヒロイン作品紹介</title>
 
   <script type="application/ld+json">
@@ -93,7 +94,11 @@
   <header>
     <div id="home">
       <p>
-        <a href="{{ ('/') | relative(page) }}"><span class="title">HEROINE PINK</span><br>
+        <a href="{{ ('/') | relative(page) }}">
+
+        <img src="{{ ('/images/logo.svg') | relative(page) }}" alt="" style="height:1.8em; float:left; margin-right:0.12em; filter: invert(1) brightness(0.2);" />        
+        
+        <span class="title">HEROINE PINK</span><br>
           <span class="tagline">対ヒロイン研究分析機関</span></a>
       </p>
     </div>
