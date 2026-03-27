@@ -324,18 +324,41 @@
 
     </section>
 
+    {# デバッグ: collections.worksの中身を可視化 #}
+    <pre style="font-size:10px; background:#eee; color:#333; overflow-x:auto;">
+    collections.works:
+    {% for item in collections.works %}
+      {{ item.data.work_code }}
+    {% endfor %}
+    see_also:
+    {% for code in see_also %}
+      {{ code }} (type: {{ code | typeof }})
+    {% endfor %}
+    </pre>
     {% if see_also and see_also.length > 0 %}
     <section id="see-also" class="clearfix" >
-
       <h2><img src="{{ ('/images/icon_see-also.svg') | relative(page) }}"><br />SEE ALSO</h2>
-        <ul>
-          {% for item in see_also %}
-          <li><a href="{{ item.url | relative(page) }}">
-            <img src="{% if page.data | isPublic(publishTarget) %}{{ item.img | toWebp('main') | relative(page) }}{% else %}{{ item.img | relative(page) }}{% endif %}" />
-          </a></li>
-          {% endfor %}
-        </ul>
-
+      <ul>
+        {% for code in see_also %}
+          {% set related = collections.works | findByField('work_code', code) %}
+          {% if related %}
+            <li>
+              <a href="{{ related.data.permalink | relative(page) }}">
+                <img src="{{ related.data.keyvisual | toWebp('main') | relative(page) }}"
+                  alt="{{ related.data.title }} {% for name in related.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ related.data.release_date }}" />
+              </a>
+            </li>
+          {% else %}
+            <pre style="font-size:10px; background:#fcc; color:#900; overflow-x:auto;">
+            [DEBUG] findByField not matched:
+            code: {{ code }} (type: {{ code | typeof }})
+            {% for item in collections.works %}
+              item.work_code: {{ item.data.work_code }} (type: {{ item.data.work_code | typeof }})
+            {% endfor %}
+            </pre>
+          {% endif %}
+        {% endfor %}
+      </ul>
     </section>
     {% endif %}
 

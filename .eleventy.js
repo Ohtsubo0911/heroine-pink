@@ -6,6 +6,8 @@ const Image = require("@11ty/eleventy-img");
 const MarkdownIt = require("markdown-it");
 
 module.exports = function(eleventyConfig) {
+  // Nunjucks用 typeofフィルター
+  eleventyConfig.addFilter("typeof", (value) => typeof value);
   // 1. 環境変数の設定 (開発か本番か)
   const isProduction = process.env.NODE_ENV === 'production';
   eleventyConfig.addGlobalData("isProduction", isProduction);
@@ -110,7 +112,13 @@ module.exports = function(eleventyConfig) {
   
   // 3. カスタムフィルター: 配列から特定のフィールドでオブジェクトを検索
   eleventyConfig.addFilter("findByField", (array, field, value) => {
-    return array.find(item => item[field] === value);
+    if (!Array.isArray(array)) return undefined;
+    // 比較前にtrim()を適用し、item.data[field]で比較
+    return array.find(item => {
+      const itemValue = (item.data && item.data[field]) ? String(item.data[field]).trim() : undefined;
+      const targetValue = (typeof value === 'string') ? value.trim() : value;
+      return itemValue === targetValue;
+    });
   });
 
   // 文字列の末尾から指定の文字を削る（sitemap で使用）
