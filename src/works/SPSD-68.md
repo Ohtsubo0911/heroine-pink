@@ -7,9 +7,7 @@ layout: "work.njk"
 work_code: "SPSD-68"
 title: "ヒロイン変身失敗 ウェネト"
 permalink: "/{{ work_code }}/"
-
-# 公開設定
-draft: true
+public: []
 
 
 # =========================================================

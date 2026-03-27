@@ -8,8 +8,7 @@ work_code: "SPSE-75"
 title: "作品タイトルを入力"
 permalink: "/{{ work_code }}/"
 
-# 公開設定
-draft: true
+public: []
 
 
 # =========================================================

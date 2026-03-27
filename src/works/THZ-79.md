@@ -7,7 +7,7 @@ layout: "work.njk"
 work_code: "THZ-79"
 title: "スーパーヒロイン絶体絶命！！Vol.79 騎神戦隊レジェンミラー ブルーフェンリル編"
 permalink: "/{{ work_code }}/"
-public: ["web"]
+public: []
 
 
 # =========================================================

@@ -7,7 +7,7 @@ layout: "work.njk"
 work_code: "GHMT-23"
 title: "騎神戦隊レジェンミラー ホワイトユニコーン陥落"
 permalink: "/{{ work_code }}/"
-public: ["web"]
+public: []
 
 
 # =========================================================

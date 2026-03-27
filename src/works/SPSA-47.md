@@ -7,7 +7,7 @@ layout: "work.njk"
 work_code: "SPSA-47"
 title: "破壊の堕天使ヴァルナーガ ヒーロー陥落"
 permalink: "/{{ work_code }}/"
-public: ["web"]
+public: []
 
 
 # =========================================================

@@ -7,7 +7,7 @@ layout: "work.njk"
 work_code: "STHP-02"
 title: "スーパーヒロイン危機一髪！！EX 騎神戦隊レジェンミラー レッドフェニックス"
 permalink: "/{{ work_code }}/"
-public: ["local", "web"]
+public: ["local"]
 
 
 # =========================================================

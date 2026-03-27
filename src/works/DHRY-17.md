@@ -7,7 +7,7 @@ layout: "work.njk"
 work_code: "DHRY-17"
 title: "同人ヒロイン16 ブルーフェンリル／蒼井涼"
 permalink: "/{{ work_code }}/"
-public: ["web"]
+public: []
 
 
 # =========================================================

@@ -7,7 +7,7 @@ layout: "work.njk"
 work_code: "TBB-97"
 title: "ヒロイン討伐Vol.97 ～騎神戦隊レジェンミラー 第24話 ブルーフェンリルを消せ～"
 permalink: "/{{ work_code }}/"
-public: ["web"]
+public: []
 
 
 # =========================================================

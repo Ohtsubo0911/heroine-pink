@@ -7,7 +7,7 @@ layout: "work.njk"
 work_code: "GHOV-93"
 title: "ヒロインハンティング 騎神戦隊レジェンミラー ホワイトユニコーン編"
 permalink: "/{{ work_code }}/"
-public: ["web"]
+public: []
 
 
 # =========================================================

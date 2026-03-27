@@ -7,7 +7,7 @@ layout: "work.njk"
 work_code: "GHLS-70"
 title: "騎神戦隊レジェンミラー 死闘！悪夢と絶望の悲壮なる最終決戦！！"
 permalink: "/{{ work_code }}/"
-public: ["web"]
+public: []
 
 
 # =========================================================
