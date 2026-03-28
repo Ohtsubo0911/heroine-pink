@@ -267,16 +267,16 @@ review:
 # =========================================================
 
 see_also:
-  - work_code: GHLS-70
-  - work_code: THZ-79
-  - work_code: GHMT-23
-  - work_code: GHMT-45
-  - work_code: TBB-97
-  - work_code: DHRY-17
-  # - work_code: GHOV-36
-  - work_code: GHOV-41
-  - work_code: STHP-02
-  - work_code: GHOV-93
-  - work_code: SPSA-47
+  - GHLS-70
+  - THZ-79
+  - GHMT-23
+  - GHMT-45
+  - TBB-97
+  - DHRY-17
+  - GHOV-36
+  - GHOV-41
+  - STHP-02
+  - GHOV-93
+  - SPSA-47
 
 ---

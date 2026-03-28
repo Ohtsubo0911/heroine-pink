@@ -338,14 +338,6 @@
                   alt="{{ related.data.title }} {% for name in related.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ related.data.release_date }}" />
               </a>
             </li>
-          {% else %}
-            <pre style="font-size:10px; background:#fcc; color:#900; overflow-x:auto;">
-            [DEBUG] findByField not matched:
-            code: {{ code }} (type: {{ code | typeof }})
-            {% for item in collections.works %}
-              item.work_code: {{ item.data.work_code }} (type: {{ item.data.work_code | typeof }})
-            {% endfor %}
-            </pre>
           {% endif %}
         {% endfor %}
       </ul>
