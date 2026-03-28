@@ -266,6 +266,7 @@ review:
 
 see_also:
   - GHOV-41
+  - GHOV-36
 
 
 ---
