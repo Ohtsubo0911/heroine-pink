@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "cross-env ELEVENTY_IMG_PHASE=3 IS_LOCAL=false eleventy --serve --output=_site_web",
+    "start": "cross-env ELEVENTY_IMG_PHASE=3 IS_LOCAL=false eleventy --serve --output=_site_web --port=8080",
     "build": "npm run build:web",
     "clean:local": "node -e \"require('fs').rmSync('_site_local',{recursive:true,force:true})\"",
     "clean:web": "node -e \"require('fs').rmSync('_site_web',{recursive:true,force:true})\"",

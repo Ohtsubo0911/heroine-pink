@@ -286,12 +286,28 @@
         <p>監督：<a href="/directors/{{ director | getDirectorSlug }}/">{{ director }}</a></p>
         <p>収録時間：{{ duration }}分</p>
         <p>DVDリリース日：{{ release_date }}</p>
-        <p>シチュエーション:
+        {# シチュエーション：全タグがtagsDataに存在する場合のみ表示 #}
+        {# tagsDataのキー一覧を取得 #}
+        {# tagKeysの配列構築をやめ、dictsortのループで直接存在チェック #}
+        {% set allTagsExist = true %}
+        {% for tag in tags %}
+          {% set found = false %}
+          {% for item in tagsData | dictsort %}
+            {% if item[0] == tag %}
+              {% set found = true %}
+            {% endif %}
+          {% endfor %}
+          {% if not found %}
+            {% set allTagsExist = false %}
+          {% endif %}
+        {% endfor %}
+        {% if allTagsExist and tags|length > 0 %}
+        <p>シチュエーション：
           {% for tag in tags %}
-          <a href="/tags/{{ tag }}/">{{ tagsData[tag].name }}</a>
-          {% if not loop.last %} {% endif %}
+            <a href="/tags/{{ tag }}/">{{ tagsData[tag].name }}</a>{% if not loop.last %} {% endif %}
           {% endfor %}
         </p>
+        {% endif %}
 
       </div>
 

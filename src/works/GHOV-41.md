@@ -37,9 +37,7 @@ tags:
 keyvisual: "images/GHOV-41/GHOV-41_Red-Phoenix_White-Unicorn_Blue-Fenril_Heroines.jpg"
 keycolor: "linear-gradient(135deg, rgb(230, 230, 230) 35%, rgb(240, 60, 60) 35%, rgb(240, 60, 60) 65%, rgb(40, 180, 230) 65%)"
 bannervisual: "images/GHOV-41/GHOV-41_L.jpg"
-
-# バナーのリンク先を指定
-affiliate_url: "https://www.yahoo.co.jp/"
+affiliate_url: "https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_173ghov00041&af_id=aycarumba-009&ch=toolbar&ch_id=package_large"
 
 
 # =========================================================

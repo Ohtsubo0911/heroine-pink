@@ -26,6 +26,7 @@
     #cookie-banner p{
       margin: 0;
       line-height: 1.51em;
+      text-align: center;
     }
 
     #cookie-banner a {

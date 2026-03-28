@@ -151,7 +151,7 @@ scenes_img:
     top:
       []
     bottom:
-      - { type: "T", align: "C", tail: "C", text: "なんて力なの・・・<br>　身体の力が全部抜けてく・・・" }
+      - { type: "T", align: "C", tail: "C", text: "なんて力なの・・・<br>身体の力が全部抜けてく・・・" }
   -
     img: "images/{{ work_code }}/{{ work_code }}_07.jpg"
     top:
@@ -172,7 +172,7 @@ scenes_img:
     top:
       []
     bottom:
-      - { type: "T", align: "L", tail: "C", text: "ここで敗けるわけにはいかない<br>　敗けるものですか" }
+      - { type: "T", align: "L", tail: "C", text: "ここで敗けるわけにはいかない<br>敗けるものですか" }
 
   -
     img: "images/{{ work_code }}/{{ work_code }}_11.jpg"
@@ -194,7 +194,7 @@ scenes_img:
     top:
       - { type: "S", align: "R", tail: "R", text: "もう諦めたらどうだギョ？" }
     bottom:
-      - { type: "T", align: "C", tail: "L", text: "痛い・・・苦しい・・・<br>　身体がもう動かない・・・" }
+      - { type: "T", align: "C", tail: "L", text: "痛い・・・苦しい・・・<br>身体がもう動かない・・・" }
   -
     img: "images/{{ work_code }}/{{ work_code }}_15.jpg"
     top:
