@@ -31,7 +31,7 @@ body{
   gap: 15px;
   background-color: #000; /* 背景は黒  */
   box-sizing: border-box;
-  min-height: 80px;
+  min-height: 40px;
   font-size: 16px;
   padding: 0 1em;
 }
