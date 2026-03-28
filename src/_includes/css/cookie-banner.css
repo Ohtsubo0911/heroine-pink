@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+#cookie-banner {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 2em 5%;
+      z-index: 1000;
+      text-align: center;
+      width: 90%;
+      color: #FFF;
+      font-family: "M PLUS 1p";
+      font-size: 1.001em;
+      line-height: 1.5em;
+    }
+    #cookie-banner img {
+      width: 1.5em;
+      height: 1.5em;
+      position: absolute;
+      top: 0.5em;
+      right: 0.5em;
+      cursor: pointer;
+      filter: invert(92%) sepia(91%) saturate(40%) hue-rotate(218deg) brightness(108%) contrast(100%);
+    }
+    #cookie-banner p{
+      margin: 0;
+      line-height: 1.51em;
+    }
+
+    #cookie-banner a {
+      color: #FFF;
+    }
+
+    #cookie-banner a:hover {
+      text-decoration: none;
+    }
+
+    #cookie-banner button {
+      margin: 1em 0.5em 0 0.5em;
+      padding: 0.5em 1.0em;
+      font-size: 1.001em;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 800;
+      color: rgba(0, 0, 0, 0.85);
+      background: #FFF;
+      border: 0;
+      font-family: "M PLUS 1p";
+    }
+
+    #cookie-banner button:hover {
+      background: #999;
+    }

@@ -265,9 +265,17 @@ review:
 # =========================================================
 
 see_also:
-  - GHOV-47
-  - GHOV-41
+  - GHLS-70
+  - THZ-79
+  - GHMT-23
+  - GHMT-45
+  - TBB-97
+  - DHRY-17
   - GHOV-36
+  - GHOV-41
+  - STHP-02
+  - GHOV-93
+  - SPSA-47
 
 
 ---

@@ -74,6 +74,9 @@
 
   {% include "backtotop.njk" %}
 
+
+  {% include "cookie-banner-style.njk" %}
+  {% include "cookie-banner.njk" %}
   <footer id="footer" class="base" style="background: #000">
     <ul>
       <li><a href="{{ ('/about/') | relative(page) }}">ABOUT US</a></li>
@@ -89,6 +92,7 @@
       {% include "js/footer.js" %}
       {% include "js/backtotop.js" %}
       {% include "js/smooth-scroll.js" %}
+      {% include "js/cookie-banner.js" %}
   </script>
 {% else %}
   {# 開発・Web公開用：外部ファイル #}
@@ -96,6 +100,7 @@
   <script src="{{ '/js/footer.js' | url }}"></script>
   <script src="{{ '/js/backtotop.js' | url }}"></script>
   <script src="{{ '/js/smooth-scroll.js' | url }}"></script>
+  <script src="{{ '/js/cookie-banner.js' | url }}"></script>
 {% endif %}
 
 
