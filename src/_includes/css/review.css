@@ -131,7 +131,7 @@
 .talkcss>.right.icon+* {
   max-width: 60%;
   max-width: -webkit-calc(80% - 60px);
-  max-width: calc(74% - 60px);
+  max-width: calc(100% - 155px);
 }
 
 .talkcss>.left:not(.icon),
