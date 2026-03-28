@@ -82,6 +82,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addGlobalData("isLocal", isLocal);
   eleventyConfig.addGlobalData("publishTarget", publishTarget);
   eleventyConfig.addGlobalData("eleventyImgPhase", eleventyImgPhase);
+  // eleventy.config.web.js の中で
+  eleventyConfig.addPassthroughCopy({ "src/favicon.svg": "favicon.svg" });
 
   // public 未指定時は draft を後方互換として扱う
   const isVisibleForTarget = (data, target = publishTarget) => {

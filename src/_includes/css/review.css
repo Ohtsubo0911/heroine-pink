@@ -131,7 +131,7 @@
 .talkcss>.right.icon+* {
   max-width: 60%;
   max-width: -webkit-calc(80% - 60px);
-  max-width: calc(74% - 60px);
+  max-width: calc(100% - 155px);
 }
 
 .talkcss>.left:not(.icon),
@@ -185,7 +185,7 @@
 }
 
 .talkcss>.dr {
-  background-image: url("{{ ('/images/reviewer_dr.png') | relative(page) }}");
+  background-image: url("/images/reviewer_dr.png");
   border-color: #1e0a8c;
 }
 
@@ -210,7 +210,7 @@
 }
 
 .talkcss>.judge {
-  background-image: url("{{ ('/images/reviewer_judge.png') | relative(page) }}");
+  background-image: url("/images/reviewer_judge.png");
   border-color: #5a641e;
 }
 
@@ -235,7 +235,7 @@
 }
 
 .talkcss>.star {
-  background-image: url("{{ ('/images/reviewer_star.png') | relative(page) }}");
+  background-image: url("/images/reviewer_star.png");
   border-color: #be28aa;
 }
 
@@ -260,7 +260,7 @@
 }
 
 .talkcss>.analyzer {
-  background-image: url("{{ ('/images/reviewer_analyzer.png') | relative(page) }}");
+  background-image: url("/images/reviewer_analyzer.png");
   border-color: #0a7846;
 }
 
@@ -285,7 +285,7 @@
 }
 
 .talkcss>.noir {
-  background-image: url("{{ ('/images/reviewer_noir.png') | relative(page) }}");
+  background-image: url("/images/reviewer_noir.png");
   border-color: #6428be;
 }
 
@@ -310,7 +310,7 @@
 }
 
 .talkcss>.madame {
-  background-image: url("{{ ('/images/reviewer_madame.png') | relative(page) }}");
+  background-image: url("/images/reviewer_madame.png");
   border-color: #821e14;
 }
 
@@ -335,7 +335,7 @@
 }
 
 .talkcss>.bot {
-  background-image: url("{{ ('/images/reviewer_bot.png') | relative(page) }}");
+  background-image: url("/images/reviewer_bot.png");
   border-color: #1e5a8c;
 }
 
@@ -360,7 +360,7 @@
 }
 
 .talkcss>.critic {
-  background-image: url("{{ ('/images/reviewer_critic.png') | relative(page) }}");
+  background-image: url("/images/reviewer_critic.png");
   border-color: #323232;
 }
 
