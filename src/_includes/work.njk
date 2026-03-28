@@ -330,15 +330,17 @@
       <h2><img src="{{ ('/images/icon_see-also.svg') | relative(page) }}"><br />SEE ALSO</h2>
       <ul>
         {% for code in see_also %}
-          {% set related = collections.works | findByField('work_code', code) %}
-          {% if related %}
-            <li>
-              <a href="{{ related.data.work_code | toWebp('main') | relative(page) }}">
-                <img src="{{ related.data.keyvisual | toWebp('main') | relative(page) }}"
-                  alt="{{ related.data.title }} {% for name in related.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ related.data.release_date }}" />
-              </a>
-            </li>
-          {% endif %}
+            {% if code != work_code %}
+              {% set related = collections.works | findByField('work_code', code) %}
+              {% if related %}
+                <li>
+                  <a href="{{ related.data.work_code | toWebp('main') | relative(page) }}">
+                    <img src="{{ related.data.keyvisual | toWebp('main') | relative(page) }}"
+                      alt="{{ related.data.title }} {% for name in related.data.actress %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %}主演 特撮ヒロイン作品 {{ related.data.release_date }}" />
+                  </a>
+                </li>
+              {% endif %}
+            {% endif %}
         {% endfor %}
       </ul>
     </section>
